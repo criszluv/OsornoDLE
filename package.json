@@ -1,0 +1,21 @@
+{
+  "name": "osornodle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Osornodle - tres desafios diarios sobre Osorno (zonas, instituciones academicas y locales/comercio).",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "validate": "node scripts/validate-data.js",
+    "hoy": "node scripts/hoy.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "optionalDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

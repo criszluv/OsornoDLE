@@ -1,0 +1,157 @@
+{
+  "_nota": "EJEMPLOS FICTICIOS. Reemplaza estos locales por comercios reales de Osorno y sus fotos en public/img/locales/. Las imágenes que vienen ahora son marcadores generados por 'node scripts/placeholders.js'.",
+  "_campos": {
+    "nombre": "nombre del local tal como lo escribiría el jugador",
+    "alias": "otras formas de escribirlo (sin tilde, apodo, etc.)",
+    "imagen": "ruta relativa dentro de /public, ej: img/locales/mi-local.jpg",
+    "tipoImagen": "Fachada | Interior | Producto | Logo — se revela como pista",
+    "rubro": "Restaurante, Cafetería, Panadería, Tienda, Ferretería, Servicio...",
+    "sector": "Centro | Rahue | Ovejería | Francke | Oriente | Norte | Sur"
+  },
+  "items": [
+    {
+      "id": "panaderia-la-espiga",
+      "nombre": "Panadería La Espiga",
+      "alias": ["La Espiga"],
+      "imagen": "img/locales/panaderia-la-espiga.png",
+      "tipoImagen": "Fachada",
+      "rubro": "Panadería",
+      "sector": "Centro",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Centro",
+      "verificado": false
+    },
+    {
+      "id": "cafe-rahue",
+      "nombre": "Café Rahue",
+      "alias": ["Cafe Rahue"],
+      "imagen": "img/locales/cafe-rahue.png",
+      "tipoImagen": "Interior",
+      "rubro": "Cafetería",
+      "sector": "Rahue",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Rahue Bajo",
+      "verificado": false
+    },
+    {
+      "id": "el-fogon-osornino",
+      "nombre": "El Fogón Osornino",
+      "alias": ["Fogon Osornino", "El Fogon"],
+      "imagen": "img/locales/el-fogon-osornino.png",
+      "tipoImagen": "Producto",
+      "rubro": "Restaurante",
+      "sector": "Centro",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Centro",
+      "verificado": false
+    },
+    {
+      "id": "heladeria-puelche",
+      "nombre": "Heladería Puelche",
+      "alias": ["Puelche", "Heladeria Puelche"],
+      "imagen": "img/locales/heladeria-puelche.png",
+      "tipoImagen": "Producto",
+      "rubro": "Heladería",
+      "sector": "Centro",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Centro",
+      "verificado": false
+    },
+    {
+      "id": "libreria-del-sur",
+      "nombre": "Librería del Sur",
+      "alias": ["Libreria del Sur"],
+      "imagen": "img/locales/libreria-del-sur.png",
+      "tipoImagen": "Fachada",
+      "rubro": "Librería",
+      "sector": "Centro",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Centro",
+      "verificado": false
+    },
+    {
+      "id": "ferreteria-chuyaca",
+      "nombre": "Ferretería Chuyaca",
+      "alias": ["Ferreteria Chuyaca"],
+      "imagen": "img/locales/ferreteria-chuyaca.png",
+      "tipoImagen": "Fachada",
+      "rubro": "Ferretería",
+      "sector": "Norte",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Chuyaca",
+      "verificado": false
+    },
+    {
+      "id": "pizzeria-volcan",
+      "nombre": "Pizzería Volcán",
+      "alias": ["Pizzeria Volcan", "Volcán"],
+      "imagen": "img/locales/pizzeria-volcan.png",
+      "tipoImagen": "Producto",
+      "rubro": "Restaurante",
+      "sector": "Oriente",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Oriente",
+      "verificado": false
+    },
+    {
+      "id": "sushi-rahue",
+      "nombre": "Sushi Rahue",
+      "alias": ["Sushi de Rahue"],
+      "imagen": "img/locales/sushi-rahue.png",
+      "tipoImagen": "Producto",
+      "rubro": "Restaurante",
+      "sector": "Rahue",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Rahue Alto",
+      "verificado": false
+    },
+    {
+      "id": "barberia-mackenna",
+      "nombre": "Barbería Mackenna",
+      "alias": ["Barberia Mackenna"],
+      "imagen": "img/locales/barberia-mackenna.png",
+      "tipoImagen": "Interior",
+      "rubro": "Servicio",
+      "sector": "Centro",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Juan Mackenna",
+      "verificado": false
+    },
+    {
+      "id": "cerveceria-rahue-bajo",
+      "nombre": "Cervecería Rahue Bajo",
+      "alias": ["Cerveceria Rahue Bajo"],
+      "imagen": "img/locales/cerveceria-rahue-bajo.png",
+      "tipoImagen": "Interior",
+      "rubro": "Bar",
+      "sector": "Rahue",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Rahue Bajo",
+      "verificado": false
+    },
+    {
+      "id": "verduleria-ovejeria",
+      "nombre": "Verdulería Ovejería",
+      "alias": ["Verduleria Ovejeria"],
+      "imagen": "img/locales/verduleria-ovejeria.png",
+      "tipoImagen": "Fachada",
+      "rubro": "Verdulería",
+      "sector": "Ovejería",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Ovejería",
+      "verificado": false
+    },
+    {
+      "id": "bazar-francke",
+      "nombre": "Bazar Francke",
+      "alias": ["Bazar de Francke"],
+      "imagen": "img/locales/bazar-francke.png",
+      "tipoImagen": "Fachada",
+      "rubro": "Tienda",
+      "sector": "Francke",
+      "descripcion": "EJEMPLO — reemplazar por un local real.",
+      "direccion": "Francke",
+      "verificado": false
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Osornodle · el juego diario de Osorno</title>
+    <meta
+      name="description"
+      content="Tres desafíos diarios sobre Osorno: adivina el lugar, la institución académica y el local del día. Sin cuenta, sin instalar nada."
+    />
+    <meta name="theme-color" content="#0e1418" />
+    <meta property="og:title" content="Osornodle" />
+    <meta property="og:description" content="Tres desafíos diarios sobre Osorno. ¿En cuántos intentos los sacas?" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="img/ui/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <div class="lluvia" aria-hidden="true"></div>
+
+    <header class="cabecera">
+      <a class="logo" href="#/" aria-label="Ir al inicio de Osornodle">
+        <span class="logo-marca">Osorno<span class="logo-dle">dle</span></span>
+        <span class="logo-sub">el juego diario de la ciudad</span>
+      </a>
+
+      <nav class="pestanas" id="pestanas" aria-label="Modos de juego"></nav>
+
+      <div class="acciones">
+        <button class="icono" id="btn-ayuda" type="button" title="Cómo se juega" aria-label="Cómo se juega">?</button>
+        <button class="icono" id="btn-stats" type="button" title="Estadísticas" aria-label="Estadísticas">▤</button>
+      </div>
+    </header>
+
+    <main id="vista" class="vista" tabindex="-1"></main>
+
+    <footer class="pie">
+      <span>Hecho para Osorno · un desafío nuevo cada medianoche</span>
+      <span class="pie-sep">·</span>
+      <button class="enlace" id="btn-ayuda-pie" type="button">Cómo se juega</button>
+    </footer>
+
+    <dialog class="modal" id="modal-ayuda">
+      <div class="modal-caja">
+        <header class="modal-cabecera">
+          <h2>Cómo se juega</h2>
+          <button class="icono" data-cerrar type="button" aria-label="Cerrar">✕</button>
+        </header>
+        <div class="modal-cuerpo" id="ayuda-cuerpo"></div>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-stats">
+      <div class="modal-caja">
+        <header class="modal-cabecera">
+          <h2>Estadísticas</h2>
+          <button class="icono" data-cerrar type="button" aria-label="Cerrar">✕</button>
+        </header>
+        <div class="modal-cuerpo" id="stats-cuerpo"></div>
+      </div>
+    </dialog>
+
+    <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
