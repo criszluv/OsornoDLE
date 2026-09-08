@@ -89,12 +89,29 @@ function semillaCiclo(modoId, ciclo) {
 
 function ordenDelCiclo(modoId, ciclo, n) {
   const orden = permutacion(n, semillaCiclo(modoId, ciclo));
-  if (n > 2 && ciclo > 0) {
-    // Evita que el ultimo item de un ciclo sea tambien el primero del siguiente.
-    const anterior = permutacion(n, semillaCiclo(modoId, ciclo - 1));
-    if (orden[0] === anterior[n - 1]) {
-      const medio = Math.floor(n / 2);
-      [orden[0], orden[medio]] = [orden[medio], orden[0]];
+  if (n < 6 || ciclo <= 0) return orden;
+
+  // Dentro de un ciclo nunca hay repeticiones, pero en el borde entre dos
+  // ciclos un item puede caer al final de uno y al principio del siguiente.
+  // Aqui se exige una separacion minima: los primeros K del ciclo nuevo no
+  // pueden estar entre los ultimos K del anterior.
+  //
+  // Los intercambios se hacen solo con posiciones intermedias [K, n-K), asi
+  // la cola de un ciclo nunca cambia y se puede calcular a partir de la
+  // permutacion cruda del ciclo anterior, sin recursion hacia atras.
+  const k = Math.min(3, Math.floor(n / 4));
+  if (k < 1) return orden;
+
+  const anterior = permutacion(n, semillaCiclo(modoId, ciclo - 1));
+  const recientes = new Set(anterior.slice(n - k));
+
+  for (let i = 0; i < k; i++) {
+    if (!recientes.has(orden[i])) continue;
+    for (let j = k; j < n - k; j++) {
+      if (!recientes.has(orden[j])) {
+        [orden[i], orden[j]] = [orden[j], orden[i]];
+        break;
+      }
     }
   }
   return orden;

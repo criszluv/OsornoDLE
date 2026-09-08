@@ -136,6 +136,20 @@ function resumenInicio() {
   console.log('');
 }
 
+servidor.on('error', (err) => {
+  if (err.code !== 'EADDRINUSE') throw err;
+
+  console.error('');
+  console.error('  ⚠️  El puerto ' + PUERTO + ' ya está ocupado.');
+  console.error('     Casi siempre es otra instancia de Osornodle que quedó corriendo.');
+  console.error('');
+  console.error('     Ver quién lo usa:   netstat -ano | findstr :' + PUERTO);
+  console.error('     Cerrarlo:           taskkill /PID <el-pid-de-arriba> /F');
+  console.error('     O usar otro puerto: $env:PORT=3001; npm start');
+  console.error('');
+  process.exit(1);
+});
+
 servidor.listen(PUERTO, () => resumenInicio());
 
 for (const senal of ['SIGINT', 'SIGTERM']) {

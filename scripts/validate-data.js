@@ -113,7 +113,7 @@ for (const modo of MODOS) {
     const item = seleccionDelDia(modo.id, items, dia + i);
     proximos.push((i === 0 ? 'hoy' : '+' + i) + ': ' + item.nombre);
   }
-  console.log('  ✓ ' + items.length + ' items · cada uno vuelve a salir cada ' + items.length + ' días');
+  console.log('  ✓ ' + items.length + ' items · ciclo de ' + items.length + ' días sin repetir');
   console.log('    ' + proximos.join(' | '));
   console.log('');
 }

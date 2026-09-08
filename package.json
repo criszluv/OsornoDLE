@@ -9,7 +9,8 @@
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
     "validate": "node scripts/validate-data.js",
-    "hoy": "node scripts/hoy.js"
+    "hoy": "node scripts/hoy.js",
+    "fotos": "node scripts/lista-fotos.js"
   },
   "engines": {
     "node": ">=18"

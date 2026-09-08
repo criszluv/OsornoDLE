@@ -1,0 +1,461 @@
+==============================================================================
+OSORNODLE · FOTOS PENDIENTES — MODO ZONAS
+Generado el 2026-09-08 · 30 lugares
+==============================================================================
+
+CÓMO USAR ESTA LISTA
+  1. Consigue la foto de cada lugar respetando las reglas de más abajo.
+  2. Guárdala en  public/img/zonas/  con el nombre exacto que dice
+     "archivo". Formato: JPG horizontal, ~1200 px de ancho, bajo 500 KB.
+  3. Agrega al item en data/zonas.json los campos "imagen" y "credito".
+  4. Corre  npm run validate  para confirmar que no falta nada.
+
+  El orden es por fecha en que cada lugar toca ser la respuesta del día:
+  los de arriba son los urgentes.
+
+==============================================================================
+REGLAS LEGALES — LEE ESTO ANTES DE DESCARGAR NADA
+==============================================================================
+
+EL EDIFICIO NO ES EL PROBLEMA. LA FOTO SÍ.
+  Chile tiene "libertad de panorama" (Ley 17.336 de Propiedad Intelectual,
+  art. 71 F): se puede reproducir y publicar libremente la imagen de obras
+  de arquitectura, monumentos y estatuas que adornan de forma permanente
+  plazas, avenidas y lugares públicos, sin pedir permiso ni pagar.
+
+  O sea: fotografiar la Catedral o el Fuerte Reina Luisa y publicarlo es
+  legal. El riesgo real es OTRO: la foto en sí tiene un dueño, que es quien
+  la tomó. Bajar una imagen de Google, Instagram o un diario y subirla al
+  juego es lo que te puede costar una carta de un abogado.
+
+DE DÓNDE SACAR LAS FOTOS, DE MÁS SEGURO A MENOS
+  1. TUYAS. Sales, las tomas tú. Eres el dueño y no le debes nada a nadie.
+     Es la opción recomendada y para casi todo Osorno es una tarde de
+     caminata.
+  2. WIKIMEDIA COMMONS (commons.wikimedia.org). Cada archivo dice su
+     licencia. CC0 y dominio público no piden nada; CC BY y CC BY-SA
+     obligan a nombrar al autor — por eso existe el campo "credito".
+  3. DONADAS por vecinos, con permiso POR ESCRITO. Un mensaje que diga
+     "sí, puedes usar mi foto en Osornodle" guardado en el chat ya sirve.
+  4. Municipalidad / SERNATUR: escríbeles y pregunta. Suelen tener banco
+     de imágenes y ceder su uso para proyectos de la comunidad.
+
+NO USAR NUNCA
+  · Google Imágenes, Pinterest, Instagram, Facebook.
+  · Fotos de medios (Diario de Osorno, radios, etc.): son con derechos.
+  · Bancos de imágenes con marca de agua.
+  · "Es que la encontré en internet" no es una licencia.
+
+PERSONAS EN LA FOTO
+  En Chile el derecho a la propia imagen está protegido. Si sale gente
+  reconocible en primer plano necesitas su permiso. Lo simple: fotografía
+  temprano o en días de poca gente, encuadra sin caras, o difumínalas.
+  Cuidado especial con menores de edad: ahí no hay margen, mejor evítalos.
+
+PROPIEDAD PRIVADA
+  La libertad de panorama cubre lo que se ve desde el espacio público.
+  Fotografía siempre parado en la vereda o la calle. No entres a un patio
+  ni uses dron sobre propiedad ajena.
+
+PARA EL MODO LOCALES (cuando llegues a eso)
+  Es un caso distinto y más delicado: ahí hay marcas, logos e interiores de
+  negocios. Pide permiso al dueño por escrito antes de usar la foto, y
+  ofrécele el trato obvio: su local aparece en un juego que juega toda la
+  ciudad. La mayoría dice que sí encantado.
+
+LLEVA EL REGISTRO
+  Anota de dónde salió cada foto en el campo "credito" del JSON. Ejemplos:
+    "credito": "Foto propia"
+    "credito": "Nombre Apellido / Wikimedia Commons, CC BY-SA 4.0"
+    "credito": "Cedida por la Municipalidad de Osorno"
+  El juego lo muestra abajo de la foto al resolver el desafío.
+
+------------------------------------------------------------------------------
+[ ] 01. AERÓDROMO CAÑAL BAJO   (toca HOY)
+
+    sector .... Oriente
+    tipo ...... Aeropuerto
+    dónde ..... Camino Cañal Bajo
+    buscar .... "Aeródromo Cañal Bajo Osorno"
+    la foto ... la fachada y el letrero identificador
+    archivo ... public/img/zonas/aerodromo-canal-bajo.jpg
+    json ...... "imagen": "img/zonas/aerodromo-canal-bajo.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar sector, anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 02. MUSEO DE ARTES VISUALES SURAZO   (toca el 09 sept 2026)
+
+    sector .... Centro
+    tipo ...... Museo
+    dónde ..... Osorno
+    buscar .... "Museo de Artes Visuales Surazo Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/museo-surazo.jpg
+    json ...... "imagen": "img/zonas/museo-surazo.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar sector, direccion, anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 03. CASA MOHR PÉREZ   (toca el 10 sept 2026)
+
+    sector .... Centro
+    tipo ...... Casa patrimonial
+    dónde ..... Juan Mackenna 939
+    buscar .... "Casa Mohr Pérez Osorno"
+    la foto ... la fachada desde la vereda pública — NO entrar a la propiedad
+    archivo ... public/img/zonas/casa-mohr-perez.jpg
+    json ...... "imagen": "img/zonas/casa-mohr-perez.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 04. PUENTE COLGANTE DE BELLAVISTA   (toca el 11 sept 2026)
+
+    sector .... Rahue
+    tipo ...... Puente
+    dónde ..... Parque Bellavista, sobre el río Rahue
+    buscar .... "Puente Colgante de Bellavista Osorno"
+    la foto ... el puente completo, de perfil o desde la ribera
+    archivo ... public/img/zonas/puente-colgante-bellavista.jpg
+    json ...... "imagen": "img/zonas/puente-colgante-bellavista.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 05. MUSEO Y ARCHIVO MUNICIPAL   (toca el 12 sept 2026)
+
+    sector .... Centro
+    tipo ...... Museo
+    dónde ..... Manuel Antonio Matta 809
+    buscar .... "Museo y Archivo Municipal Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/museo-historico-municipal.jpg
+    json ...... "imagen": "img/zonas/museo-historico-municipal.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar direccion, anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 06. PARQUE CHUYACA   (toca el 13 sept 2026)
+
+    sector .... Norte
+    tipo ...... Parque
+    dónde ..... Entrada principal de Osorno, orillas del río Damas
+    buscar .... "Parque Chuyaca Osorno"
+    la foto ... una vista amplia que muestre el entorno; evita el primer plano de una banca
+    archivo ... public/img/zonas/parque-chuyaca.jpg
+    json ...... "imagen": "img/zonas/parque-chuyaca.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 07. TEATRO MUNICIPAL   (toca el 14 sept 2026)
+
+    sector .... Centro
+    tipo ...... Teatro
+    dónde ..... Av. Juan Mackenna 851
+    buscar .... "Teatro Municipal Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/teatro-municipal.jpg
+    json ...... "imagen": "img/zonas/teatro-municipal.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 08. CASA DE ENRIQUE SCHÜLLER   (toca el 15 sept 2026)
+
+    sector .... Centro
+    tipo ...... Casa patrimonial
+    dónde ..... Juan Mackenna 1011
+    buscar .... "Casa de Enrique Schüller Osorno"
+    la foto ... la fachada desde la vereda pública — NO entrar a la propiedad
+    archivo ... public/img/zonas/casa-enrique-schuller.jpg
+    json ...... "imagen": "img/zonas/casa-enrique-schuller.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 09. MERCADO MUNICIPAL   (toca el 16 sept 2026)
+
+    sector .... Centro
+    tipo ...... Mercado
+    dónde ..... Errázuriz con Prat
+    buscar .... "Mercado Municipal Osorno"
+    la foto ... la fachada o el pasillo principal
+    archivo ... public/img/zonas/mercado-municipal.jpg
+    json ...... "imagen": "img/zonas/mercado-municipal.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio, direccion en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 10. CASA HOLLSTEIN   (toca el 17 sept 2026)
+
+    sector .... Centro
+    tipo ...... Casa patrimonial
+    dónde ..... Osorno
+    buscar .... "Casa Hollstein Osorno"
+    la foto ... la fachada desde la vereda pública — NO entrar a la propiedad
+    archivo ... public/img/zonas/casa-hollstein.jpg
+    json ...... "imagen": "img/zonas/casa-hollstein.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar sector, direccion en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 11. CATEDRAL SAN MATEO APÓSTOL   (toca el 18 sept 2026)
+
+    sector .... Centro
+    tipo ...... Iglesia
+    dónde ..... Independencia con Juan Mackenna
+    buscar .... "Catedral San Mateo Apóstol Osorno"
+    la foto ... la fachada y la torre, desde la vereda del frente
+    archivo ... public/img/zonas/catedral-san-mateo.jpg
+    json ...... "imagen": "img/zonas/catedral-san-mateo.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 12. HOSPITAL BASE SAN JOSÉ   (toca el 19 sept 2026)
+
+    sector .... Oriente
+    tipo ...... Hospital
+    dónde ..... Av. Doctor Guillermo Bühler 1765
+    buscar .... "Hospital Base San José Osorno"
+    la foto ... solo la fachada principal — nunca pacientes ni áreas clínicas
+    archivo ... public/img/zonas/hospital-base-san-jose.jpg
+    json ...... "imagen": "img/zonas/hospital-base-san-jose.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar sector, anio, direccion en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 13. ESTADIO RUBÉN MARCOS PERALTA   (toca el 20 sept 2026)
+
+    sector .... Centro
+    tipo ...... Estadio
+    dónde ..... Parque Schott
+    buscar .... "Estadio Rubén Marcos Peralta Osorno"
+    la foto ... la fachada o las galerías; con público es aún mejor
+    archivo ... public/img/zonas/estadio-ruben-marcos.jpg
+    json ...... "imagen": "img/zonas/estadio-ruben-marcos.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 14. MUSEO DEL PLEISTOCENO   (toca el 21 sept 2026)
+
+    sector .... Norte
+    tipo ...... Museo
+    dónde ..... Parque Chuyaca
+    buscar .... "Museo del Pleistoceno Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/museo-del-pleistoceno.jpg
+    json ...... "imagen": "img/zonas/museo-del-pleistoceno.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 15. PUENTE CHUYACA   (toca el 22 sept 2026)
+
+    sector .... Norte
+    tipo ...... Puente
+    dónde ..... Sobre el río Damas
+    buscar .... "Puente Chuyaca Osorno"
+    la foto ... el puente completo, de perfil o desde la ribera
+    archivo ... public/img/zonas/puente-chuyaca.jpg
+    json ...... "imagen": "img/zonas/puente-chuyaca.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 16. PLAZA DE ARMAS   (toca el 23 sept 2026)
+
+    sector .... Centro
+    tipo ...... Plaza
+    dónde ..... Juan Mackenna con Arturo Prat
+    buscar .... "Plaza de Armas Osorno"
+    la foto ... vista general del espacio, con el elemento más reconocible al centro
+    archivo ... public/img/zonas/plaza-de-armas.jpg
+    json ...... "imagen": "img/zonas/plaza-de-armas.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 17. PUENTE SAN PEDRO   (toca el 24 sept 2026)
+
+    sector .... Rahue
+    tipo ...... Puente
+    dónde ..... Sobre el río Rahue
+    buscar .... "Puente San Pedro Osorno"
+    la foto ... el puente completo, de perfil o desde la ribera
+    archivo ... public/img/zonas/puente-san-pedro.jpg
+    json ...... "imagen": "img/zonas/puente-san-pedro.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 18. PINACOTECA MUNICIPAL   (toca el 25 sept 2026)
+
+    sector .... Centro
+    tipo ...... Museo
+    dónde ..... Portales 901, ex Estación de Ferrocarriles
+    buscar .... "Pinacoteca Municipal Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/pinacoteca-municipal.jpg
+    json ...... "imagen": "img/zonas/pinacoteca-municipal.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 19. EX ESTACIÓN DE FERROCARRILES   (toca el 26 sept 2026)
+
+    sector .... Centro
+    tipo ...... Edificio patrimonial
+    dónde ..... Portales 901
+    buscar .... "Ex Estación de Ferrocarriles Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/ex-estacion-de-ferrocarriles.jpg
+    json ...... "imagen": "img/zonas/ex-estacion-de-ferrocarriles.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 20. CASA DE CONRADO STÜCKRATH   (toca el 27 sept 2026)
+
+    sector .... Centro
+    tipo ...... Casa patrimonial
+    dónde ..... Juan Mackenna 1095
+    buscar .... "Casa de Conrado Stückrath Osorno"
+    la foto ... la fachada desde la vereda pública — NO entrar a la propiedad
+    archivo ... public/img/zonas/casa-conrado-stuckrath.jpg
+    json ...... "imagen": "img/zonas/casa-conrado-stuckrath.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 21. PARQUE PLEISTOCÉNICO   (toca el 30 sept 2026)
+
+    sector .... Norte
+    tipo ...... Parque
+    dónde ..... Parque Chuyaca
+    buscar .... "Parque Pleistocénico Osorno"
+    la foto ... una vista amplia que muestre el entorno; evita el primer plano de una banca
+    archivo ... public/img/zonas/parque-pleistocenico.jpg
+    json ...... "imagen": "img/zonas/parque-pleistocenico.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 22. TERMINAL DE BUSES   (toca el 03 oct 2026)
+
+    sector .... Centro
+    tipo ...... Terminal
+    dónde ..... Errázuriz 1400
+    buscar .... "Terminal de Buses Osorno"
+    la foto ... la fachada y el letrero identificador
+    archivo ... public/img/zonas/terminal-de-buses.jpg
+    json ...... "imagen": "img/zonas/terminal-de-buses.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio, direccion en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 23. PARQUE BELLAVISTA   (toca el 05 oct 2026)
+
+    sector .... Rahue
+    tipo ...... Parque
+    dónde ..... Ribera del río Rahue
+    buscar .... "Parque Bellavista Osorno"
+    la foto ... una vista amplia que muestre el entorno; evita el primer plano de una banca
+    archivo ... public/img/zonas/parque-bellavista.jpg
+    json ...... "imagen": "img/zonas/parque-bellavista.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 24. CEMENTERIO DE FORRAHUE   (toca el 10 oct 2026)
+
+    sector .... Rural
+    tipo ...... Cementerio
+    dónde ..... Sector rural de Forrahue
+    buscar .... "Cementerio de Forrahue Osorno"
+    la foto ... vista general respetuosa; es un sitio de memoria, evita primeros planos de tumbas
+    archivo ... public/img/zonas/cementerio-de-forrahue.jpg
+    json ...... "imagen": "img/zonas/cementerio-de-forrahue.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 25. PARQUE CUARTO CENTENARIO   (toca el 15 oct 2026)
+
+    sector .... Centro
+    tipo ...... Parque
+    dónde ..... Junto al río Damas
+    buscar .... "Parque Cuarto Centenario Osorno"
+    la foto ... una vista amplia que muestre el entorno; evita el primer plano de una banca
+    archivo ... public/img/zonas/parque-cuarto-centenario.jpg
+    json ...... "imagen": "img/zonas/parque-cuarto-centenario.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar sector en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 26. CALLE JUAN MACKENNA   (toca el 17 oct 2026)
+
+    sector .... Centro
+    tipo ...... Calle
+    dónde ..... Centro
+    buscar .... "Calle Juan Mackenna Osorno"
+    la foto ... una vista a lo largo de la calle que deje ver su carácter
+    archivo ... public/img/zonas/calle-juan-mackenna.jpg
+    json ...... "imagen": "img/zonas/calle-juan-mackenna.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 27. PLAZUELA YUNGAY   (toca el 18 oct 2026)
+
+    sector .... Centro
+    tipo ...... Plaza
+    dónde ..... Centro
+    buscar .... "Plazuela Yungay Osorno"
+    la foto ... vista general del espacio, con el elemento más reconocible al centro
+    archivo ... public/img/zonas/plazuela-yungay.jpg
+    json ...... "imagen": "img/zonas/plazuela-yungay.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio, direccion en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 28. FUERTE REINA LUISA   (toca el 20 oct 2026)
+
+    sector .... Centro
+    tipo ...... Monumento
+    dónde ..... Av. República, ribera del río Rahue
+    buscar .... "Fuerte Reina Luisa Osorno"
+    la foto ... el monumento completo, con algo de contexto alrededor
+    archivo ... public/img/zonas/fuerte-reina-luisa.jpg
+    json ...... "imagen": "img/zonas/fuerte-reina-luisa.jpg",
+                "credito": "Foto propia"
+
+------------------------------------------------------------------------------
+[ ] 29. CALLE RAMÍREZ   (toca el 21 oct 2026)
+
+    sector .... Centro
+    tipo ...... Calle
+    dónde ..... Centro
+    buscar .... "Calle Ramírez Osorno"
+    la foto ... una vista a lo largo de la calle que deje ver su carácter
+    archivo ... public/img/zonas/calle-ramirez.jpg
+    json ...... "imagen": "img/zonas/calle-ramirez.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+------------------------------------------------------------------------------
+[ ] 30. MUNICIPALIDAD DE OSORNO   (toca el 26 oct 2026)
+
+    sector .... Centro
+    tipo ...... Edificio público
+    dónde ..... Juan Mackenna 851
+    buscar .... "Municipalidad de Osorno Osorno"
+    la foto ... la fachada del edificio, con la entrada visible
+    archivo ... public/img/zonas/municipalidad-de-osorno.jpg
+    json ...... "imagen": "img/zonas/municipalidad-de-osorno.jpg",
+                "credito": "Foto propia"
+    ⚠ FALTA ... confirmar anio en data/zonas.json
+
+==============================================================================
+RESUMEN
+  30 lugares en total, 0 ya con foto, 30 por conseguir.
+  18 lugares tienen además datos por confirmar (marcados con ⚠).
+  Fuentes usadas para armar los datos: Consejo de Monumentos Nacionales,
+  catálogo "Atractivos Turísticos Comuna de Osorno" (2024) y Explora Osorno.
+
+  Esto es orientación práctica, no asesoría legal. Si vas a publicar el
+  juego con publicidad o fines comerciales, conviene revisarlo con un
+  abogado.
+==============================================================================

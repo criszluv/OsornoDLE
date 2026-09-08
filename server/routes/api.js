@@ -54,6 +54,7 @@ function fichaRevelada(modo, item) {
     descripcion: item.descripcion || null,
     direccion: item.direccion || null,
     imagen: item.imagen || null,
+    credito: item.credito || null,
     mapa: item.mapa || null,
     atributos: modo.atributos.map((a) => ({
       label: a.label,

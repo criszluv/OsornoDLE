@@ -115,7 +115,22 @@ function pintarResultado(estado) {
     )
   );
 
+  // En el modo visual la foto ya está arriba; aquí sería repetirla.
+  if (modo.tipo !== 'imagen' && respuesta.imagen) {
+    caja.prepend(
+      el('img', {
+        class: 'resultado-foto',
+        src: respuesta.imagen,
+        alt: 'Foto de ' + respuesta.nombre,
+        loading: 'lazy'
+      })
+    );
+  }
+
   if (respuesta.descripcion) caja.append(el('p', {}, respuesta.descripcion));
+
+  // Atribución de la foto: obligatoria con licencias tipo CC BY.
+  if (respuesta.credito) caja.append(el('p', { class: 'credito-foto' }, 'Foto: ' + respuesta.credito));
 
   const datos = el('div', { class: 'resultado-datos' });
   (respuesta.atributos || []).forEach((a) => datos.append(el('span', { class: 'chip' }, a.label + ': ' + a.valor)));

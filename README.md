@@ -41,6 +41,7 @@ npm run dev
 | `npm run dev` | Igual, pero reinicia al guardar archivos |
 | `npm run validate` | Revisa los datos: campos faltantes, valores inválidos, fotos que no existen |
 | `npm run hoy` | Muestra las respuestas de hoy en la consola (`node scripts/hoy.js 7` para una semana) |
+| `npm run fotos` | Genera `FOTOS-ZONAS.txt`: qué foto falta, ordenada por urgencia, con las reglas legales |
 | `node scripts/placeholders.js` | Genera imágenes marcador para el modo Locales |
 
 ## Estructura
@@ -155,13 +156,50 @@ como error cualquier valor fuera de la lista, así no se cuelan typos que rompen
 
 ## Estado actual de los datos
 
-**Los datos que vienen cargados son un punto de partida y no están verificados.** Los años,
-colores institucionales y dependencias se pusieron como plantilla plausible, y los 12
-locales son **ficticios** con imágenes generadas automáticamente. Antes de publicar:
+Cada modo va por su lado:
 
-1. Revisa cada item y corrige lo que corresponda.
-2. Marca `"verificado": true` en los que ya revisaste.
-3. `npm run validate` te dice cuántos faltan.
+**🗺️ Zonas — investigado.** 30 lugares, todos de **uso público o monumentos nacionales**
+(nada de propiedad comercial privada, para evitar problemas de permisos). Los datos salen
+del Consejo de Monumentos Nacionales, del catálogo *Atractivos Turísticos Comuna de
+Osorno* (2024) y de Explora Osorno; cada item lleva su campo `fuente`. 21 de 30 están
+marcados `verificado: true`. Los que traen un array `revisar` necesitan que alguien con
+conocimiento local confirme esos campos puntuales.
+
+Dos cosas conocidas de este set: 12 de 30 lugares tienen `anio` (el resto muestra `¿?` y
+siempre cuenta como fallo), y 20 de 30 son del sector Centro, así que la columna de sector
+discrimina poco. Ambas se arreglan completando datos o subdividiendo los sectores.
+
+**🎓 Instituciones — pendiente.** Solo la Universidad de Los Lagos y el Instituto Alemán
+están verificados. Para el resto, la fuente autoritativa de `dependencia`, `niveles` y
+`genero` es el [Directorio de Establecimientos del
+MINEDUC](https://datosabiertos.mineduc.cl/directorio-de-establecimientos-educacionales/):
+filtra por comuna Osorno y salen los datos oficiales con RBD.
+
+**📸 Locales — ficticio.** Los 12 locales son inventados y las imágenes están generadas
+por script. Hay que reemplazarlos por comercios reales, **con permiso escrito del dueño**.
+
+En los tres casos: marca `"verificado": true` a medida que confirmes, y usa
+`npm run validate` para ver cuántos faltan.
+
+## Fotos y derechos
+
+`npm run fotos` genera `FOTOS-ZONAS.txt` con la lista de fotos por conseguir, ordenada por
+la fecha en que cada lugar toca ser la respuesta, y con las reglas legales al principio.
+
+El resumen corto: Chile tiene libertad de panorama (Ley 17.336, art. 71 F), así que
+fotografiar y publicar monumentos y edificios desde la vía pública es legal. Lo que **no**
+puedes hacer es tomar la foto de otra persona desde Google o Instagram: esa foto tiene
+dueño. Lo seguro es tomarlas tú, o usar Wikimedia Commons respetando la licencia.
+
+Cuando un item tiene `imagen`, el juego la muestra al resolver el desafío, y si tiene
+`credito` lo imprime debajo — que es lo que exigen las licencias tipo CC BY:
+
+```json
+{
+  "imagen": "img/zonas/plaza-de-armas.jpg",
+  "credito": "Nombre Apellido / Wikimedia Commons, CC BY-SA 4.0"
+}
+```
 
 ## Configuración
 

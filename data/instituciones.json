@@ -1,5 +1,9 @@
 {
-  "_nota": "DATOS INICIALES SIN VERIFICAR. Colores institucionales, años de fundación y dependencias son un punto de partida: confírmalos antes de publicar y marca verificado: true.",
+  "_nota": "PENDIENTE DE VERIFICAR (salvo los items con verificado: true). Para 'dependencia', 'niveles' y 'genero' la fuente autoritativa es el Directorio de Establecimientos Educacionales del MINEDUC (datos.gob.cl / Centro de Estudios MINEDUC): trae el RBD, la dependencia oficial y los niveles que imparte cada colegio de la comuna de Osorno. Los colores institucionales y los años de fundación hay que sacarlos de cada establecimiento. Marca verificado: true a medida que confirmes.",
+  "_fuentes": {
+    "mineduc": "https://datosabiertos.mineduc.cl/directorio-de-establecimientos-educacionales/",
+    "nota": "Filtra por comuna = Osorno. Ahí salen dependencia, niveles y orientación religiosa/género oficiales."
+  },
   "_campos": {
     "sector": "Centro | Rahue | Ovejería | Francke | Oriente | Norte | Sur",
     "niveles": "array: Básica, Media, Superior, Parvularia, Técnica",
@@ -13,24 +17,42 @@
     {
       "id": "universidad-de-los-lagos",
       "nombre": "Universidad de Los Lagos",
-      "alias": ["ULagos", "U. de Los Lagos", "Instituto Profesional de Osorno"],
+      "alias": [
+        "ULagos",
+        "U. de Los Lagos",
+        "Instituto Profesional de Osorno"
+      ],
       "sector": "Oriente",
-      "niveles": ["Superior"],
+      "niveles": [
+        "Superior"
+      ],
       "dependencia": "Estatal",
       "genero": "Mixto",
       "color": "Azul",
       "colorHex": "#12428f",
       "fundacion": 1993,
-      "descripcion": "Universidad estatal con casa central en Osorno.",
+      "descripcion": "Universidad estatal creada por la ley 19.238 el 30 de agosto de 1993, sobre la base del Instituto Profesional de Osorno. Su campus en la ciudad tiene 22 hectáreas e incluye la Casa Hollstein, sede de la Escuela de Arquitectura y Diseño.",
       "direccion": "Av. Fuchslocher 1305",
-      "verificado": false
+      "verificado": true,
+      "fuente": "Wikipedia / ulagos.cl",
+      "revisar": [
+        "sector",
+        "direccion",
+        "color"
+      ]
     },
     {
       "id": "universidad-san-sebastian",
       "nombre": "Universidad San Sebastián",
-      "alias": ["USS", "San Sebastián", "Sede De la Patagonia"],
+      "alias": [
+        "USS",
+        "San Sebastián",
+        "Sede De la Patagonia"
+      ],
       "sector": "Centro",
-      "niveles": ["Superior"],
+      "niveles": [
+        "Superior"
+      ],
       "dependencia": "Particular pagado",
       "genero": "Mixto",
       "color": "Rojo",
@@ -38,14 +60,30 @@
       "fundacion": 1989,
       "descripcion": "Sede osornina de la USS.",
       "direccion": "Lago Puyehue 1091",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "universidad-santo-tomas",
       "nombre": "Universidad Santo Tomás",
-      "alias": ["Santo Tomás", "UST", "CFT Santo Tomás"],
+      "alias": [
+        "Santo Tomás",
+        "UST",
+        "CFT Santo Tomás"
+      ],
       "sector": "Centro",
-      "niveles": ["Superior", "Técnica"],
+      "niveles": [
+        "Superior",
+        "Técnica"
+      ],
       "dependencia": "Particular pagado",
       "genero": "Mixto",
       "color": "Azul",
@@ -53,14 +91,29 @@
       "fundacion": 1998,
       "descripcion": "Universidad, IP y CFT con sede en el centro de Osorno.",
       "direccion": "Av. Alcalde Fuchslocher",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "inacap-osorno",
       "nombre": "INACAP",
-      "alias": ["Inacap Osorno", "Universidad Tecnológica de Chile"],
+      "alias": [
+        "Inacap Osorno",
+        "Universidad Tecnológica de Chile"
+      ],
       "sector": "Oriente",
-      "niveles": ["Superior", "Técnica"],
+      "niveles": [
+        "Superior",
+        "Técnica"
+      ],
       "dependencia": "Particular pagado",
       "genero": "Mixto",
       "color": "Rojo",
@@ -68,14 +121,29 @@
       "fundacion": 1966,
       "descripcion": "Sede técnico-profesional con fuerte foco en carreras de oficio.",
       "direccion": "Av. Real 1355",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "aiep-osorno",
       "nombre": "AIEP",
-      "alias": ["Instituto AIEP", "IP AIEP"],
+      "alias": [
+        "Instituto AIEP",
+        "IP AIEP"
+      ],
       "sector": "Centro",
-      "niveles": ["Superior", "Técnica"],
+      "niveles": [
+        "Superior",
+        "Técnica"
+      ],
       "dependencia": "Particular pagado",
       "genero": "Mixto",
       "color": "Naranjo",
@@ -83,14 +151,28 @@
       "fundacion": 2004,
       "descripcion": "Instituto profesional en el centro de la ciudad.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "cft-estatal-los-lagos",
       "nombre": "CFT Estatal de Los Lagos",
-      "alias": ["CFT Estatal", "Centro de Formación Técnica Estatal"],
+      "alias": [
+        "CFT Estatal",
+        "Centro de Formación Técnica Estatal"
+      ],
       "sector": "Rahue",
-      "niveles": ["Técnica"],
+      "niveles": [
+        "Técnica"
+      ],
       "dependencia": "Estatal",
       "genero": "Mixto",
       "color": "Verde",
@@ -98,29 +180,58 @@
       "fundacion": 2018,
       "descripcion": "Centro de formación técnica estatal de la región.",
       "direccion": "Rahue",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "instituto-aleman-osorno",
       "nombre": "Instituto Alemán de Osorno",
-      "alias": ["Deutsche Schule", "Colegio Alemán", "Instituto Alemán"],
+      "alias": [
+        "Deutsche Schule",
+        "Colegio Alemán",
+        "Instituto Alemán"
+      ],
       "sector": "Oriente",
-      "niveles": ["Parvularia", "Básica", "Media"],
+      "niveles": [
+        "Parvularia",
+        "Básica",
+        "Media"
+      ],
       "dependencia": "Particular pagado",
       "genero": "Mixto",
       "color": "Azul",
       "colorHex": "#1b4f9c",
       "fundacion": 1854,
-      "descripcion": "Colegio fundado por la colonia alemana, uno de los más antiguos del sur.",
+      "descripcion": "Colegio fundado por la colonia alemana en 1854; celebró sus 150 años en 2004. Administra el Centro Cultural Sofía Hott, en la casa patrimonial de Enrique Schüller donada ese mismo año.",
       "direccion": "Av. Bühler",
-      "verificado": false
+      "verificado": true,
+      "fuente": "Consejo de Monumentos Nacionales (catalogo Atractivos Turisticos Osorno 2024)",
+      "revisar": [
+        "sector",
+        "color",
+        "niveles"
+      ]
     },
     {
       "id": "colegio-san-mateo",
       "nombre": "Colegio San Mateo",
-      "alias": ["San Mateo", "Colegio de los Jesuitas"],
+      "alias": [
+        "San Mateo",
+        "Colegio de los Jesuitas"
+      ],
       "sector": "Centro",
-      "niveles": ["Básica", "Media"],
+      "niveles": [
+        "Básica",
+        "Media"
+      ],
       "dependencia": "Particular subvencionado",
       "genero": "Mixto",
       "color": "Azul",
@@ -128,14 +239,29 @@
       "fundacion": 1907,
       "descripcion": "Colegio de tradición jesuita en el centro de Osorno.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "instituto-comercial-osorno",
       "nombre": "Instituto Comercial de Osorno",
-      "alias": ["INSUCO", "Comercial"],
+      "alias": [
+        "INSUCO",
+        "Comercial"
+      ],
       "sector": "Centro",
-      "niveles": ["Media", "Técnica"],
+      "niveles": [
+        "Media",
+        "Técnica"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Verde",
@@ -143,14 +269,29 @@
       "fundacion": 1938,
       "descripcion": "Liceo técnico-profesional con especialidades comerciales.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "liceo-industrial-osorno",
       "nombre": "Liceo Industrial de Osorno",
-      "alias": ["Industrial", "Liceo Industrial"],
+      "alias": [
+        "Industrial",
+        "Liceo Industrial"
+      ],
       "sector": "Rahue",
-      "niveles": ["Media", "Técnica"],
+      "niveles": [
+        "Media",
+        "Técnica"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Azul",
@@ -158,14 +299,28 @@
       "fundacion": 1943,
       "descripcion": "Formación técnica en mecánica, electricidad y construcción.",
       "direccion": "Rahue",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "liceo-carmela-carvajal",
       "nombre": "Liceo Carmela Carvajal de Prat",
-      "alias": ["Carmela Carvajal", "Liceo de Niñas"],
+      "alias": [
+        "Carmela Carvajal",
+        "Liceo de Niñas"
+      ],
       "sector": "Centro",
-      "niveles": ["Media"],
+      "niveles": [
+        "Media"
+      ],
       "dependencia": "Municipal",
       "genero": "Femenino",
       "color": "Azul",
@@ -173,14 +328,28 @@
       "fundacion": 1907,
       "descripcion": "Liceo histórico de enseñanza media femenina.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "liceo-eleuterio-ramirez",
       "nombre": "Liceo Eleuterio Ramírez",
-      "alias": ["Liceo de Hombres", "Eleuterio Ramírez"],
+      "alias": [
+        "Liceo de Hombres",
+        "Eleuterio Ramírez"
+      ],
       "sector": "Centro",
-      "niveles": ["Media"],
+      "niveles": [
+        "Media"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Azul",
@@ -188,14 +357,28 @@
       "fundacion": 1895,
       "descripcion": "Antiguo liceo de hombres de la ciudad.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "escuela-espana",
       "nombre": "Escuela España",
-      "alias": ["España"],
+      "alias": [
+        "España"
+      ],
       "sector": "Centro",
-      "niveles": ["Parvularia", "Básica"],
+      "niveles": [
+        "Parvularia",
+        "Básica"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Rojo",
@@ -203,14 +386,30 @@
       "fundacion": 1930,
       "descripcion": "Escuela básica municipal del casco céntrico.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "colegio-providencia",
       "nombre": "Colegio Providencia",
-      "alias": ["Providencia", "Las Monjas"],
+      "alias": [
+        "Providencia",
+        "Las Monjas"
+      ],
       "sector": "Centro",
-      "niveles": ["Parvularia", "Básica", "Media"],
+      "niveles": [
+        "Parvularia",
+        "Básica",
+        "Media"
+      ],
       "dependencia": "Particular subvencionado",
       "genero": "Femenino",
       "color": "Celeste",
@@ -218,14 +417,28 @@
       "fundacion": 1900,
       "descripcion": "Colegio católico de larga tradición en la ciudad.",
       "direccion": "Centro",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "colegio-creacion-osorno",
       "nombre": "Colegio Creación",
-      "alias": ["Creación"],
+      "alias": [
+        "Creación"
+      ],
       "sector": "Oriente",
-      "niveles": ["Básica", "Media"],
+      "niveles": [
+        "Básica",
+        "Media"
+      ],
       "dependencia": "Particular subvencionado",
       "genero": "Mixto",
       "color": "Verde",
@@ -233,14 +446,28 @@
       "fundacion": 1995,
       "descripcion": "Colegio particular subvencionado con enfoque artístico.",
       "direccion": "Oriente",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "escuela-rahue-alto",
       "nombre": "Escuela Rahue Alto",
-      "alias": ["Rahue Alto"],
+      "alias": [
+        "Rahue Alto"
+      ],
       "sector": "Rahue",
-      "niveles": ["Parvularia", "Básica"],
+      "niveles": [
+        "Parvularia",
+        "Básica"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Amarillo",
@@ -248,14 +475,29 @@
       "fundacion": 1968,
       "descripcion": "Escuela básica del sector alto de Rahue.",
       "direccion": "Rahue Alto",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "colegio-san-jose-francke",
       "nombre": "Colegio San José",
-      "alias": ["San José", "San José de Francke"],
+      "alias": [
+        "San José",
+        "San José de Francke"
+      ],
       "sector": "Francke",
-      "niveles": ["Básica", "Media"],
+      "niveles": [
+        "Básica",
+        "Media"
+      ],
       "dependencia": "Particular subvencionado",
       "genero": "Mixto",
       "color": "Burdeo",
@@ -263,14 +505,29 @@
       "fundacion": 1980,
       "descripcion": "Colegio del sector Francke.",
       "direccion": "Francke",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     },
     {
       "id": "liceo-politecnico-ovejeria",
       "nombre": "Liceo Politécnico de Ovejería",
-      "alias": ["Politécnico", "Ovejería"],
+      "alias": [
+        "Politécnico",
+        "Ovejería"
+      ],
       "sector": "Ovejería",
-      "niveles": ["Media", "Técnica"],
+      "niveles": [
+        "Media",
+        "Técnica"
+      ],
       "dependencia": "Municipal",
       "genero": "Mixto",
       "color": "Gris",
@@ -278,7 +535,16 @@
       "fundacion": 1985,
       "descripcion": "Liceo técnico-profesional del sector Ovejería.",
       "direccion": "Ovejería",
-      "verificado": false
+      "verificado": false,
+      "fuente": "pendiente",
+      "revisar": [
+        "dependencia",
+        "niveles",
+        "genero",
+        "fundacion",
+        "color",
+        "sector"
+      ]
     }
   ]
 }

@@ -33,7 +33,7 @@ export const MODOS = [
         label: 'Macro-sector',
         tipo: 'exact',
         ancho: 1.15,
-        valores: ['Centro', 'Rahue', 'Ovejería', 'Francke', 'Oriente', 'Norte', 'Sur']
+        valores: ['Centro', 'Rahue', 'Ovejería', 'Francke', 'Oriente', 'Norte', 'Sur', 'Rural']
       },
       { key: 'categoria', label: 'Categoría', tipo: 'exact', ancho: 1.1 },
       { key: 'acceso', label: 'Acceso', tipo: 'exact', valores: ['Público', 'Privado', 'Mixto'] },

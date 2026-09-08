@@ -775,6 +775,16 @@ button {
   border-color: var(--correcto-b);
 }
 
+.resultado-foto {
+  display: block;
+  width: calc(100% + 44px);
+  margin: -22px -22px 18px;
+  max-width: none;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-bottom: 1px solid var(--borde);
+}
+
 .resultado h2 {
   margin: 0 0 6px;
   font-size: 24px;
@@ -791,6 +801,12 @@ button {
   margin: 0 0 12px;
   color: var(--texto-2);
   font-size: 15px;
+}
+
+.credito-foto {
+  font-size: 12px !important;
+  color: var(--texto-3) !important;
+  margin-bottom: 14px !important;
 }
 
 .resultado-datos {
