@@ -104,12 +104,12 @@ function vistaPortada() {
     el(
       'section',
       { class: 'hero' },
-      el('h1', {}, 'Tres desafíos diarios sobre Osorno'),
+      el('h1', {}, 'Cuatro desafíos diarios sobre Osorno'),
       el(
         'p',
         {},
-        'Un lugar, una institución y un local nuevos cada día. Sin cuenta, sin instalar nada: ' +
-          'juega, guarda tu racha y compite con tus amigos por resolverlo en menos intentos.'
+        'Un lugar, una institución, un local y una descripción nuevos cada día. Sin cuenta y sin ' +
+          'instalar nada: juega y compite con tus amigos por resolverlo en menos intentos.'
       ),
       el('div', { class: 'hero-fecha' }, '📅 ' + fechaLegible(config.fecha) + ' · Desafío #' + (config.dia + 1))
     ),
@@ -117,7 +117,7 @@ function vistaPortada() {
     el(
       'div',
       { class: 'cuenta-regresiva', style: { textAlign: 'center', marginTop: '30px' } },
-      'Los tres desafíos cambian en',
+      'Los desafíos cambian en',
       reloj
     )
   );
@@ -151,16 +151,22 @@ function tarjetaModo(modo) {
 
 function conectarModales() {
   const modalAyuda = document.getElementById('modal-ayuda');
-  const modalStats = document.getElementById('modal-stats');
 
-  const abrir = (modal, pintar) => {
-    pintar();
-    modal.showModal();
+  const abrirAyuda = () => {
+    pintarAyuda();
+    modalAyuda.showModal();
   };
 
-  document.getElementById('btn-ayuda').addEventListener('click', () => abrir(modalAyuda, pintarAyuda));
-  document.getElementById('btn-ayuda-pie').addEventListener('click', () => abrir(modalAyuda, pintarAyuda));
-  document.getElementById('btn-stats').addEventListener('click', () => abrir(modalStats, pintarStats));
+  document.getElementById('btn-ayuda').addEventListener('click', abrirAyuda);
+  document.getElementById('btn-ayuda-pie').addEventListener('click', abrirAyuda);
+
+  document.getElementById('btn-borrar').addEventListener('click', () => {
+    if (!confirm('¿Borrar tus partidas guardadas? Podrás volver a jugar los desafíos de hoy desde cero.')) return;
+    borrarTodo();
+    aviso('Listo, puedes jugar de nuevo');
+    pintarPestanas();
+    enrutar();
+  });
 
   document.querySelectorAll('.modal').forEach((modal) => {
     modal.querySelector('[data-cerrar]').addEventListener('click', () => modal.close());
@@ -175,15 +181,14 @@ function pintarAyuda() {
   const cuerpo = limpiar(document.getElementById('ayuda-cuerpo'));
 
   cuerpo.append(
-    el('p', {}, 'Cada día hay tres desafíos independientes sobre Osorno. Se reinician a la medianoche.'),
+    el('p', {}, 'Cada día hay cuatro desafíos independientes sobre Osorno. Se reinician a la medianoche.'),
     el('h3', {}, 'Los colores'),
     el(
       'ul',
       {},
       el('li', {}, el('b', {}, '🟩 Verde: '), 'el atributo coincide exactamente con la respuesta.'),
       el('li', {}, el('b', {}, '🟨 Amarillo: '), 'coincide en parte (o el número está cerca).'),
-      el('li', {}, el('b', {}, '🟥 Rojo: '), 'no hay ninguna coincidencia.'),
-      el('li', {}, el('b', {}, '⬆️ ⬇️: '), 'la respuesta correcta tiene un año mayor o menor.')
+      el('li', {}, el('b', {}, '🟥 Rojo: '), 'no hay ninguna coincidencia.')
     )
   );
 
@@ -205,6 +210,16 @@ function pintarAyuda() {
         )
       );
     }
+    if (modo.tipo === 'frases') {
+      cuerpo.append(
+        el(
+          'p',
+          {},
+          'Empiezas con una sola frase, la más vaga. Cada intento fallido suma otra, ' +
+            'cada vez más específica. Aquí no hay colores: solo leer y deducir.'
+        )
+      );
+    }
   });
 
   cuerpo.append(
@@ -212,79 +227,10 @@ function pintarAyuda() {
     el(
       'p',
       {},
-      'No hay cuentas ni login: la racha y las estadísticas se guardan solo en este navegador. ' +
-        'Si borras los datos del sitio, se pierden.'
+      'No hay cuentas ni login: tus partidas se guardan solo en este navegador. Puedes borrarlas ' +
+        'cuando quieras desde el pie de página, o repetir un desafío con el botón "Jugar de nuevo".'
     )
   );
-}
-
-function pintarStats() {
-  const cuerpo = limpiar(document.getElementById('stats-cuerpo'));
-
-  config.modos.forEach((modo) => {
-    const stats = cargarStats(modo.id);
-    const racha = rachaVigente(stats, config.dia);
-    const porcentaje = stats.jugadas ? Math.round((stats.ganadas / stats.jugadas) * 100) : 0;
-
-    cuerpo.append(
-      el('h3', {}, modo.emoji + ' ' + modo.nombre),
-      el(
-        'div',
-        { class: 'stats-grid' },
-        stat(stats.jugadas, 'Jugadas'),
-        stat(porcentaje + '%', 'Aciertos'),
-        stat(racha, 'Racha'),
-        stat(stats.mejorRacha, 'Mejor racha')
-      ),
-      distribucion(stats)
-    );
-  });
-
-  cuerpo.append(
-    el(
-      'div',
-      { style: { marginTop: '20px', textAlign: 'center' } },
-      el(
-        'button',
-        {
-          class: 'btn secundario',
-          type: 'button',
-          onclick: () => {
-            if (!confirm('¿Borrar todas tus estadísticas y partidas guardadas?')) return;
-            borrarTodo();
-            aviso('Datos borrados');
-            document.getElementById('modal-stats').close();
-            pintarPestanas();
-            enrutar();
-          }
-        },
-        'Borrar mis datos'
-      )
-    )
-  );
-}
-
-function stat(valor, etiqueta) {
-  return el('div', { class: 'stat' }, el('b', {}, String(valor)), el('span', {}, etiqueta));
-}
-
-function distribucion(stats) {
-  const claves = ['1', '2', '3', '4', '5', '6', '7', '8+'];
-  const maximo = Math.max(1, ...claves.map((k) => stats.distribucion[k] || 0));
-
-  const caja = el('div', { class: 'dist' });
-  claves.forEach((clave) => {
-    const n = stats.distribucion[clave] || 0;
-    caja.append(
-      el(
-        'div',
-        { class: 'dist-fila' },
-        el('span', {}, clave),
-        el('div', { class: 'dist-barra' + (n ? '' : ' vacia'), style: { width: (n / maximo) * 100 + '%' } }, String(n))
-      )
-    );
-  });
-  return caja;
 }
 
 iniciar();

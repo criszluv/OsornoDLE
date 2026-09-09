@@ -1,0 +1,333 @@
+{
+  "_nota": "Modo 'Descripción': mezcla zonas e instituciones. Cada item tiene un array 'frases' que se revela de a una, en orden: la primera es la más genérica y la última la más delatora. Todas las frases salen de datos verificados (Consejo de Monumentos Nacionales y catálogo Atractivos Turísticos Comuna de Osorno 2024); no inventes detalles constructivos, el juego pierde gracia si la pista es falsa.",
+  "_campos": {
+    "tipo": "Zona | Institución — se revela como pista al 3er intento",
+    "frases": "3 a 5 frases, de la más vaga a la más obvia. Escríbelas en presente y sin nombrar el lugar.",
+    "descripcion": "texto que se muestra al resolver"
+  },
+  "items": [
+    {
+      "id": "plaza-de-armas",
+      "nombre": "Plaza de Armas",
+      "alias": [
+        "Plaza de Armas de Osorno",
+        "La plaza"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Es un cuadrado casi perfecto: 125 por 125 metros.",
+        "En su lado norte tiene un odeón, que funciona como núcleo del lugar.",
+        "Al centro hay un espejo de agua con tres surtidores que elevan el agua unos 6 metros.",
+        "Entre sus árboles hay fresnos, maitenes y un canelo plantado por Gabriela Mistral.",
+        "Su emplazamiento data del 27 de marzo de 1558, el día en que se fundó la ciudad."
+      ],
+      "descripcion": "Se modernizó en la década de 1930, con un plan del urbanista Óscar Pragger impulsado por el alcalde Arturo Bertín.",
+      "direccion": "Juan Mackenna con Arturo Prat",
+      "fuente": "SERNATUR / Atractivos Turísticos Comuna de Osorno 2024",
+      "verificado": true
+    },
+    {
+      "id": "catedral-san-mateo",
+      "nombre": "Catedral San Mateo Apóstol",
+      "alias": [
+        "Catedral de Osorno",
+        "San Mateo"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Su interior se divide en tres naves separadas por arcos apuntados.",
+        "Por fuera destaca una fachada de filigrana ojival, de influencia europea.",
+        "Su torre alcanza los 45 metros y se ve desde varios puntos de la ciudad.",
+        "Es el quinto edificio levantado en el mismo sitio desde 1577.",
+        "El actual se construyó tras el terremoto de 1960 y fue bendecido en 1977."
+      ],
+      "descripcion": "La fachada la diseñó el arquitecto León Prieto Casanova. La torre se levantó en 1982.",
+      "direccion": "Independencia con Juan Mackenna",
+      "fuente": "SERNATUR 2024 / Wikipedia",
+      "verificado": true
+    },
+    {
+      "id": "fuerte-reina-luisa",
+      "nombre": "Fuerte Reina Luisa",
+      "alias": [
+        "Fuerte de Osorno",
+        "El Castillo"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Se levantó primero con empalizadas y un foso excavado a mano.",
+        "Para sus muros se sacó piedra cancagua de las ruinas de la ciudad antigua.",
+        "Un terremoto lo destruyó en 1835; hoy solo la base de una muralla es original.",
+        "Está a orillas del río Rahue y lleva el nombre de una reina española."
+      ],
+      "descripcion": "Su primer nombre fue Fuerte San Luis, porque su foso se empezó a excavar el día de San Luis. Ambrosio O'Higgins lo rebautizó en honor a María Luisa, esposa de Carlos IV.",
+      "direccion": "Av. República, ribera del río Rahue",
+      "fuente": "SERNATUR / Atractivos Turísticos Comuna de Osorno 2024",
+      "verificado": true
+    },
+    {
+      "id": "casa-mohr-perez",
+      "nombre": "Casa Mohr Pérez",
+      "alias": [
+        "Casona Mohr",
+        "Mackenna 939"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Es una construcción de dos plantas, con corredor y un soberado bajo el techo.",
+        "Sus muros exteriores están cubiertos de tejuelas y la techumbre es de acero galvanizado.",
+        "La madera manda: roble en la estructura, laurel en los pisos, alerce y roble en las tejuelas.",
+        "Los cielos interiores son de planchas de yeso y cartón, y tiene una amplia terraza.",
+        "La mandó construir en 1876 un descendiente de colonos alemanes."
+      ],
+      "descripcion": "Una de las casas patrimoniales más antiguas de Osorno, de estilo neoclásico. Monumento Histórico desde diciembre de 1983.",
+      "direccion": "Juan Mackenna 939",
+      "fuente": "Consejo de Monumentos Nacionales",
+      "verificado": true
+    },
+    {
+      "id": "casa-conrado-stuckrath",
+      "nombre": "Casa de Conrado Stückrath",
+      "alias": [
+        "Casa Stuckrath",
+        "Mackenna 1095"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "La levantó un artesano de la madera, que la hizo íntegramente de ese material.",
+        "Tiene un corredor en la entrada principal que se une con la vereda de la calle.",
+        "Fue la primera residencia alemana construida en su calle, en 1882.",
+        "Su modelo lo siguieron después las demás casas del barrio de Rotemburgo."
+      ],
+      "descripcion": "Perteneció al matrimonio de Conrado Stückrath y Ana Bárbara Pfeil, que llegaron a Chile con sus siete hijos. Monumento Histórico desde 1983.",
+      "direccion": "Juan Mackenna 1095",
+      "fuente": "Consejo de Monumentos Nacionales",
+      "verificado": true
+    },
+    {
+      "id": "casa-enrique-schuller",
+      "nombre": "Casa de Enrique Schüller",
+      "alias": [
+        "Centro Cultural Sofía Hott",
+        "Casa Schuller"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Es un chalet: elegante, pero de formas más simples que las casonas aristocráticas de su época.",
+        "Tiene un jardín delicado que hace de recepción y de aislante con los edificios vecinos.",
+        "La diseñó y construyó un ingeniero en 1923, para vivir en ella.",
+        "Fue la última casa del sector que mantuvo el estilo de la inmigración alemana.",
+        "Hoy funciona como centro cultural del Instituto Alemán, que la recibió donada en 2004."
+      ],
+      "descripcion": "En 1934 la compró el matrimonio de Manuel Narbona y Sofía Hott, que décadas después la donó al Instituto Alemán. Monumento Histórico desde 1983.",
+      "direccion": "Juan Mackenna 1011",
+      "fuente": "Consejo de Monumentos Nacionales",
+      "verificado": true
+    },
+    {
+      "id": "casa-hollstein",
+      "nombre": "Casa Hollstein",
+      "alias": [
+        "Casona Hollstein",
+        "Escuela de Arquitectura ULagos"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Se construyó sin arquitecto: solo su dueño y sus empleados.",
+        "Está hecha con maderas nativas, principalmente pellín.",
+        "Su estilo es neoclásico sobrio, adaptado al clima lluvioso de la zona.",
+        "La rodea un parque con aromos, cipreses de Monterrey, palmeras y pino oregón.",
+        "Hoy funciona ahí la Escuela de Arquitectura y Diseño de la Universidad de Los Lagos."
+      ],
+      "descripcion": "Construida entre 1900 y 1910 por el empresario agrícola Guillermo Hollstein. Monumento Histórico desde 1999, con su parque declarado Zona Típica.",
+      "direccion": "Osorno",
+      "fuente": "Consejo de Monumentos Nacionales",
+      "verificado": true
+    },
+    {
+      "id": "estadio-ruben-marcos",
+      "nombre": "Estadio Rubén Marcos Peralta",
+      "alias": [
+        "Estadio Municipal",
+        "Parque Schott"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Caben cerca de 11.000 personas y un 80% de ellas queda bajo techo.",
+        "Su cancha es de pasto sintético desde 2006.",
+        "Se inauguró en 1940 con el nombre del parque que lo rodea.",
+        "Lleva el nombre de un mediocampista osornino de la selección chilena de los años 60."
+      ],
+      "descripcion": "Casa del fútbol osornino. Cambió de nombre el 14 de noviembre de 2006, al estrenar la cancha sintética.",
+      "direccion": "Parque Schott",
+      "fuente": "Wikipedia / Estadio Municipal Rubén Marcos Peralta",
+      "verificado": true
+    },
+    {
+      "id": "museo-del-pleistoceno",
+      "nombre": "Museo del Pleistoceno",
+      "alias": [
+        "Museo Pleistoceno",
+        "Sala Pilauco"
+      ],
+      "tipo": "Zona",
+      "sector": "Norte",
+      "frases": [
+        "Su museografía se reparte en dos salas.",
+        "Usa dioramas, réplicas y módulos interactivos.",
+        "Exhibe los fósiles excavados en el sitio Pilauco Bajo.",
+        "Se inauguró en septiembre de 2017 y consolidó a Osorno como capital de la paleontología."
+      ],
+      "descripcion": "Difunde el patrimonio paleontológico y arqueológico hallado en Pilauco Bajo.",
+      "direccion": "Parque Chuyaca",
+      "fuente": "Municipalidad de Osorno / Atractivos Turísticos 2024",
+      "verificado": true
+    },
+    {
+      "id": "parque-pleistocenico",
+      "nombre": "Parque Pleistocénico",
+      "alias": [
+        "Parque de los animales",
+        "Megafauna"
+      ],
+      "tipo": "Zona",
+      "sector": "Norte",
+      "frases": [
+        "Está al aire libre, dentro de un parque más grande.",
+        "Expone réplicas a escala real de animales.",
+        "La megafauna que representa habitó la zona hace más de 12 mil años."
+      ],
+      "descripcion": "Dentro del Parque Chuyaca, junto a la piscina municipal y el skate park.",
+      "direccion": "Parque Chuyaca",
+      "fuente": "Explora Osorno",
+      "verificado": true
+    },
+    {
+      "id": "puente-colgante-bellavista",
+      "nombre": "Puente Colgante de Bellavista",
+      "alias": [
+        "Puente colgante",
+        "Pasarela Bellavista"
+      ],
+      "tipo": "Zona",
+      "sector": "Rahue",
+      "frases": [
+        "Es una estructura colgante, solo para peatones.",
+        "Cruza el río Rahue.",
+        "Conecta Rahue Bajo con Ovejería.",
+        "Sale del parque que se inauguró a fines de 2012 en la ribera del río."
+      ],
+      "descripcion": "Paso peatonal del Parque Bellavista.",
+      "direccion": "Parque Bellavista, sobre el río Rahue",
+      "fuente": "Explora Osorno",
+      "verificado": true
+    },
+    {
+      "id": "cementerio-de-forrahue",
+      "nombre": "Cementerio de Forrahue",
+      "alias": [
+        "Forrahue"
+      ],
+      "tipo": "Zona",
+      "sector": "Rural",
+      "frases": [
+        "Está en la cima de la colina más alta de su sector, en zona rural.",
+        "Es un cementerio indígena.",
+        "Conmemora una matanza ocurrida en octubre de 1912, en que murieron 15 personas.",
+        "Fue declarado Monumento Histórico a solicitud de la propia comunidad mapuche-huilliche."
+      ],
+      "descripcion": "Recuerda a quienes murieron resistiendo un desalojo. La comunidad indígena de Forrahue impulsó su protección con apoyo de CONADI y el municipio.",
+      "direccion": "Sector rural de Forrahue",
+      "fuente": "Consejo de Monumentos Nacionales / Municipalidad de Osorno",
+      "verificado": true
+    },
+    {
+      "id": "ex-estacion-de-ferrocarriles",
+      "nombre": "Ex Estación de Ferrocarriles",
+      "alias": [
+        "Estación de trenes",
+        "Antigua estación",
+        "Biblioteca Municipal"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Es un edificio patrimonial de principios del siglo XX.",
+        "Ya no cumple la función para la que fue construido.",
+        "Adentro funciona una biblioteca con unos 18.000 libros.",
+        "Comparte techo con una pinacoteca municipal."
+      ],
+      "descripcion": "Está en Portales 901. Alberga la Biblioteca Municipal y la Pinacoteca.",
+      "direccion": "Portales 901",
+      "fuente": "Municipalidad de Osorno",
+      "verificado": true
+    },
+    {
+      "id": "pinacoteca-municipal",
+      "nombre": "Pinacoteca Municipal",
+      "alias": [
+        "Pinacoteca"
+      ],
+      "tipo": "Zona",
+      "sector": "Centro",
+      "frases": [
+        "Ocupa un edificio patrimonial que antes tuvo un uso completamente distinto.",
+        "Su colección parte de la donación de un Premio Nacional de Arte de 1993.",
+        "Reúne obras de la década de 1940, de maestros como Camilo Mori, Israel Roa y Roser Bru.",
+        "Se puede visitar gratis."
+      ],
+      "descripcion": "Funciona en la antigua Estación de Trenes. La donación original fue del artista Sergio Montecino Montalva.",
+      "direccion": "Portales 901, ex Estación de Ferrocarriles",
+      "fuente": "Municipalidad de Osorno / Registro de Museos de Chile",
+      "verificado": true
+    },
+    {
+      "id": "universidad-de-los-lagos",
+      "nombre": "Universidad de Los Lagos",
+      "alias": [
+        "ULagos",
+        "U. de Los Lagos"
+      ],
+      "tipo": "Institución",
+      "sector": "Oriente",
+      "frases": [
+        "Su campus en la ciudad ocupa 22 hectáreas, con unos 24.600 m² construidos.",
+        "Dentro conserva una casona de estilo alemán clásico de 1.776 m².",
+        "Esa casona alberga su Escuela de Arquitectura y Diseño.",
+        "Es estatal y se creó por ley en agosto de 1993, sobre la base de un instituto profesional."
+      ],
+      "descripcion": "Creada por la ley 19.238 el 30 de agosto de 1993. Su tradición académica se remonta a 1964.",
+      "direccion": "Av. Fuchslocher 1305",
+      "fuente": "Wikipedia / ulagos.cl",
+      "verificado": true
+    },
+    {
+      "id": "instituto-aleman-osorno",
+      "nombre": "Instituto Alemán de Osorno",
+      "alias": [
+        "Deutsche Schule",
+        "Colegio Alemán"
+      ],
+      "tipo": "Institución",
+      "sector": "Oriente",
+      "frases": [
+        "Lo fundó la colonia alemana en 1854.",
+        "Celebró sus 150 años en 2004.",
+        "Ese mismo año recibió donada una casa patrimonial de 1923 en calle Mackenna.",
+        "Esa casa funciona hoy como su centro cultural."
+      ],
+      "descripcion": "Uno de los colegios más antiguos del sur de Chile. Administra el Centro Cultural Sofía Hott.",
+      "direccion": "Av. Bühler",
+      "fuente": "Consejo de Monumentos Nacionales (catálogo Atractivos Turísticos Osorno 2024)",
+      "verificado": true
+    }
+  ]
+}

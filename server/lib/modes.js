@@ -43,8 +43,7 @@ export const MODOS = [
         tipo: 'boolean',
         etiquetaVerdadero: 'Techado',
         etiquetaFalso: 'Aire libre'
-      },
-      { key: 'anio', label: 'Año', tipo: 'numeric', cerca: 15, sinDato: '¿?' }
+      }
     ]
   },
   {
@@ -80,8 +79,7 @@ export const MODOS = [
         valores: ['Municipal', 'Particular subvencionado', 'Particular pagado', 'Estatal', 'Delegada']
       },
       { key: 'genero', label: 'Género', tipo: 'exact', valores: ['Mixto', 'Femenino', 'Masculino'] },
-      { key: 'color', label: 'Color', tipo: 'color', campoHex: 'colorHex' },
-      { key: 'fundacion', label: 'Fundación', tipo: 'numeric', cerca: 20, sinDato: '¿?' }
+      { key: 'color', label: 'Color', tipo: 'color', campoHex: 'colorHex' }
     ]
   },
   {
@@ -109,6 +107,23 @@ export const MODOS = [
       { desde: 3, key: 'rubro', label: 'Rubro' },
       { desde: 5, key: 'sector', label: 'Sector' }
     ]
+  },
+  {
+    id: 'descripcion',
+    nombre: 'Descripción',
+    emoji: '🧩',
+    titulo: 'Adivina por la descripción',
+    descripcion:
+      'Zonas e instituciones mezcladas. Se describe cómo es el lugar: sus materiales, su forma, lo que tiene adentro. Cada intento fallido suma una pista nueva.',
+    tipo: 'frases',
+    placeholder: 'Escribe un lugar o una institución...',
+    archivo: 'descripciones.json',
+    atributos: [],
+    /**
+     * Las frases se revelan de a una: la primera es la mas generica y la
+     * ultima la mas delatora. El campo `frases` de cada item las ordena.
+     */
+    pistas: [{ desde: 3, key: 'tipo', label: 'Es una' }]
   }
 ];
 

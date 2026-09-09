@@ -88,6 +88,26 @@ for (const modo of MODOS) {
     }
   }
 
+  // Frases del modo por descripción.
+  if (modo.tipo === 'frases') {
+    for (const item of items) {
+      const frases = Array.isArray(item.frases) ? item.frases : [];
+      if (frases.length < 2) {
+        error(item.id + ' necesita al menos 2 frases (tiene ' + frases.length + ')');
+        continue;
+      }
+      const nombre = normalizar(item.nombre);
+      frases.forEach((f, i) => {
+        // Una frase que nombra el lugar regala la respuesta.
+        if (normalizar(f).includes(nombre)) {
+          error(item.id + ': la frase ' + (i + 1) + ' menciona el nombre del lugar');
+        }
+      });
+    }
+    const promedio = items.reduce((s, i) => s + (i.frases || []).length, 0) / items.length;
+    console.log('  · ' + promedio.toFixed(1) + ' frases por item en promedio');
+  }
+
   // Imágenes del modo visual.
   if (modo.tipo === 'imagen') {
     for (const item of items) {

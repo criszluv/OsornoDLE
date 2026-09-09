@@ -45,6 +45,15 @@ export function guardarPartida(modo, partida) {
   escribir('partida:' + modo, partida);
 }
 
+/** Borra solo la partida de hoy de un modo, para volver a jugarla. */
+export function borrarPartida(modo) {
+  try {
+    localStorage.removeItem(PREFIJO + 'partida:' + modo);
+  } catch {
+    /* nada que hacer */
+  }
+}
+
 // --- Estadísticas ----------------------------------------------------------
 
 const statsVacias = () => ({

@@ -3,7 +3,7 @@
 import { api } from './api.js';
 import { el, limpiar, aviso, cuentaRegresiva, compartir, urlMapa } from './ui.js';
 import { crearBuscador } from './autocompletar.js';
-import { cargarPartida, guardarPartida, registrarResultado } from './almacenamiento.js';
+import { cargarPartida, guardarPartida, borrarPartida, registrarResultado } from './almacenamiento.js';
 
 const EMOJI = { correcto: '🟩', parcial: '🟨', incorrecto: '🟥' };
 const INTENTOS_PARA_RENDIRSE = 5;
@@ -26,10 +26,12 @@ export async function vistaJuego(contenedor, modo, contexto) {
     daily = primera[1];
     partida = cargarPartida(modo.id, daily.dia);
 
-    // El modo visual necesita el token del nivel de nitidez ya alcanzado.
-    if (modo.tipo === 'imagen' && (partida.fallidos > 0 || partida.terminado)) {
-      const nivel = partida.terminado ? modo.nivelesImagen.length - 1 : partida.fallidos;
-      daily = await api.daily(modo.id, nivel);
+    // Los modos con revelado progresivo (foto o frases) necesitan volver a
+    // pedir el estado en el punto donde iba la partida guardada.
+    const progresivo = modo.tipo === 'imagen' || modo.tipo === 'frases';
+    if (progresivo && (partida.fallidos > 0 || partida.terminado)) {
+      const tope = modo.tipo === 'imagen' ? modo.nivelesImagen.length - 1 : 99;
+      daily = await api.daily(modo.id, partida.terminado ? tope : partida.fallidos);
     }
   } catch (err) {
     limpiar(contenedor).append(
@@ -50,6 +52,7 @@ export async function vistaJuego(contenedor, modo, contexto) {
   estado.zonaResultado = zonaResultado;
 
   if (modo.tipo === 'imagen') montarImagen(estado);
+  else if (modo.tipo === 'frases') montarFrases(estado);
   else montarDeductivo(estado);
 }
 
@@ -134,6 +137,7 @@ function pintarResultado(estado) {
 
   const datos = el('div', { class: 'resultado-datos' });
   (respuesta.atributos || []).forEach((a) => datos.append(el('span', { class: 'chip' }, a.label + ': ' + a.valor)));
+  if (respuesta.tipo) datos.append(el('span', { class: 'chip' }, respuesta.tipo));
   if (respuesta.rubro) datos.append(el('span', { class: 'chip' }, 'Rubro: ' + respuesta.rubro));
   if (respuesta.sector) datos.append(el('span', { class: 'chip' }, 'Sector: ' + respuesta.sector));
   if (respuesta.direccion) datos.append(el('span', { class: 'chip' }, '📍 ' + respuesta.direccion));
@@ -159,6 +163,19 @@ function pintarResultado(estado) {
       'a',
       { class: 'btn secundario', href: urlMapa(respuesta.nombre), target: '_blank', rel: 'noopener' },
       '🗺️ Ver en el mapa'
+    ),
+    el(
+      'button',
+      {
+        class: 'btn secundario',
+        type: 'button',
+        title: 'Borra tu partida de hoy en este modo y la empieza de cero',
+        onclick: () => {
+          borrarPartida(modo.id);
+          location.reload();
+        }
+      },
+      '🔄 Jugar de nuevo'
     )
   );
   caja.append(acciones);
@@ -181,6 +198,13 @@ function textoCompartir({ modo, partida, daily }) {
     lineas.push(
       partida.gano
         ? 'Reconocido con la foto al ' + porcentajeNitidez(modo, nivel) + '% de nitidez'
+        : 'No lo saqué esta vez'
+    );
+  } else if (modo.tipo === 'frases') {
+    lineas.push('🟥'.repeat(partida.fallidos) + (partida.gano ? '🟩' : ''));
+    lineas.push(
+      partida.gano
+        ? 'Con ' + (partida.fallidos + 1) + ' pista(s) a la vista'
         : 'No lo saqué esta vez'
     );
   } else {
@@ -214,6 +238,9 @@ function botonRendirse(estado) {
           if (estado.modo.tipo === 'imagen') {
             estado.partida.fallidos = estado.modo.nivelesImagen.length - 1;
             await mostrarFoto(estado, datos.imagenToken);
+          }
+          if (estado.modo.tipo === 'frases' && estado.pintarFrases) {
+            estado.pintarFrases(datos.frases, datos.frasesTotales, false);
           }
           terminar(estado, false, datos.respuesta);
         }
@@ -347,6 +374,72 @@ function leyenda(modo) {
     partes.push(el('span', {}, '⬆️ / ⬇️ la respuesta es mayor / menor'));
   }
   return el('div', { class: 'leyenda' }, ...partes);
+}
+
+// --- Modo por frases -------------------------------------------------------
+
+function montarFrases(estado) {
+  const { modo, partida, daily, zonaJuego } = estado;
+
+  const lista = el('ol', { class: 'frases' });
+  const contador = el('span', { class: 'frases-contador' }, '');
+  const zonaPistas = el('div', { class: 'pistas' });
+  const listaIntentos = el('ul', { class: 'intentos-lista' });
+  estado.zonaPistas = zonaPistas;
+
+  /** Repinta la lista; marca la última como recién revelada. */
+  function pintarFrases(frases, total, animarUltima) {
+    limpiar(lista);
+    (frases || []).forEach((texto, i) => {
+      const esUltima = i === frases.length - 1;
+      lista.append(el('li', { class: 'frase' + (esUltima && animarUltima ? ' nueva' : '') }, texto));
+    });
+    const vistas = (frases || []).length;
+    contador.textContent = vistas >= total ? 'Todas las pistas' : 'Pista ' + vistas + ' de ' + total;
+  }
+
+  estado.pintarFrases = pintarFrases;
+
+  const buscador = montarBuscador(estado, async (respuesta, item) => {
+    pintarFrases(respuesta.frases, respuesta.frasesTotales, true);
+    pintarPistas(estado, respuesta.pistas);
+
+    if (respuesta.correcto) {
+      terminar(estado, true, respuesta.respuesta);
+      return;
+    }
+
+    partida.filas.push({ nombre: item.nombre, correcto: false, celdas: [] });
+    listaIntentos.prepend(el('li', { class: 'intento-fallido' }, item.nombre));
+    if (respuesta.frases.length >= respuesta.frasesTotales) {
+      aviso('Ya no quedan más pistas: es todo lo que se sabe del lugar.');
+    }
+  });
+
+  zonaJuego.append(
+    el(
+      'section',
+      { class: 'panel-frases' },
+      el('header', { class: 'frases-cabecera' }, el('span', {}, '🧩 Pistas'), contador),
+      lista
+    ),
+    zonaPistas,
+    buscador,
+    listaIntentos
+  );
+
+  partida.filas.forEach((fila) => listaIntentos.append(el('li', { class: 'intento-fallido' }, fila.nombre)));
+  pintarFrases(daily.frases, daily.frasesTotales, false);
+  pintarPistas(estado, daily.pistas);
+  actualizarChipIntentos(partida.intentos.length);
+
+  if (partida.terminado) {
+    estado.buscador.bloquear(partida.gano ? '¡Resuelto por hoy!' : 'Vuelve mañana');
+    pintarResultado(estado);
+  } else {
+    estado.buscador.enfocar();
+    refrescarRendirse(estado);
+  }
 }
 
 // --- Modo visual -----------------------------------------------------------

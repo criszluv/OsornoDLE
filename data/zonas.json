@@ -1,7 +1,7 @@
 {
   "_nota": "Datos investigados en fuentes oficiales (Consejo de Monumentos Nacionales y catálogo 'Atractivos Turísticos Comuna de Osorno', SERNATUR/Municipalidad, sept. 2024). Solo se incluyen espacios de USO PÚBLICO o monumentos nacionales: nada de propiedad comercial privada. Cada item tiene 'fuente'; los que traen 'revisar' necesitan que confirmes esos campos con conocimiento local.",
   "_criterios": {
-    "anio": "Año de inauguración o de construcción del edificio actual. null si no se pudo verificar: sale como '¿?' y siempre cuenta como fallo.",
+    "anio": "Ya NO es un atributo del juego: se sacó porque la mayoría de los lugares no tenía un año verificable. Se conserva como dato informativo y se usa en las frases del modo Descripción.",
     "acceso": "Público = entrada libre. Mixto = espacio público con horario, entrada pagada o control de acceso. Privado = no se entra sin autorización (la fachada sí es visible desde la calle).",
     "sector": "Centro | Rahue | Ovejería | Francke | Oriente | Norte | Sur | Rural",
     "techado": "true = el lugar en sí es un espacio techado. false = al aire libre.",
@@ -11,7 +11,11 @@
     {
       "id": "plaza-de-armas",
       "nombre": "Plaza de Armas",
-      "alias": ["Plaza de Armas de Osorno", "Plaza principal", "La plaza"],
+      "alias": [
+        "Plaza de Armas de Osorno",
+        "Plaza principal",
+        "La plaza"
+      ],
       "sector": "Centro",
       "categoria": "Plaza",
       "acceso": "Público",
@@ -25,7 +29,11 @@
     {
       "id": "fuerte-reina-luisa",
       "nombre": "Fuerte Reina Luisa",
-      "alias": ["Fuerte de Osorno", "El Castillo", "Fuerte San Luis"],
+      "alias": [
+        "Fuerte de Osorno",
+        "El Castillo",
+        "Fuerte San Luis"
+      ],
       "sector": "Centro",
       "categoria": "Monumento",
       "acceso": "Público",
@@ -39,7 +47,11 @@
     {
       "id": "catedral-san-mateo",
       "nombre": "Catedral San Mateo Apóstol",
-      "alias": ["Catedral de Osorno", "San Mateo", "La catedral"],
+      "alias": [
+        "Catedral de Osorno",
+        "San Mateo",
+        "La catedral"
+      ],
       "sector": "Centro",
       "categoria": "Iglesia",
       "acceso": "Público",
@@ -53,7 +65,10 @@
     {
       "id": "casa-mohr-perez",
       "nombre": "Casa Mohr Pérez",
-      "alias": ["Casona Mohr", "Mackenna 939"],
+      "alias": [
+        "Casona Mohr",
+        "Mackenna 939"
+      ],
       "sector": "Centro",
       "categoria": "Casa patrimonial",
       "acceso": "Privado",
@@ -67,7 +82,10 @@
     {
       "id": "casa-conrado-stuckrath",
       "nombre": "Casa de Conrado Stückrath",
-      "alias": ["Casa Stuckrath", "Mackenna 1095"],
+      "alias": [
+        "Casa Stuckrath",
+        "Mackenna 1095"
+      ],
       "sector": "Centro",
       "categoria": "Casa patrimonial",
       "acceso": "Privado",
@@ -81,7 +99,11 @@
     {
       "id": "casa-enrique-schuller",
       "nombre": "Casa de Enrique Schüller",
-      "alias": ["Centro Cultural Sofía Hott", "Casa Schuller", "Mackenna 1011"],
+      "alias": [
+        "Centro Cultural Sofía Hott",
+        "Casa Schuller",
+        "Mackenna 1011"
+      ],
       "sector": "Centro",
       "categoria": "Casa patrimonial",
       "acceso": "Privado",
@@ -95,7 +117,10 @@
     {
       "id": "casa-hollstein",
       "nombre": "Casa Hollstein",
-      "alias": ["Casona Hollstein", "Escuela de Arquitectura ULagos"],
+      "alias": [
+        "Casona Hollstein",
+        "Escuela de Arquitectura ULagos"
+      ],
       "sector": "Centro",
       "categoria": "Casa patrimonial",
       "acceso": "Privado",
@@ -104,13 +129,19 @@
       "descripcion": "Construida entre 1900 y 1910 por el empresario alemán Guillermo Hollstein junto a sus empleados, sin arquitecto. Hoy alberga la Escuela de Arquitectura y Diseño de la Universidad de Los Lagos. Monumento Histórico desde 1999, junto a su parque declarado Zona Típica.",
       "direccion": "Osorno",
       "fuente": "Consejo de Monumentos Nacionales",
-      "revisar": ["sector", "direccion"],
+      "revisar": [
+        "sector",
+        "direccion"
+      ],
       "verificado": false
     },
     {
       "id": "cementerio-de-forrahue",
       "nombre": "Cementerio de Forrahue",
-      "alias": ["Forrahue", "Cementerio indígena de Forrahue"],
+      "alias": [
+        "Forrahue",
+        "Cementerio indígena de Forrahue"
+      ],
       "sector": "Rural",
       "categoria": "Cementerio",
       "acceso": "Público",
@@ -124,7 +155,10 @@
     {
       "id": "museo-historico-municipal",
       "nombre": "Museo y Archivo Municipal",
-      "alias": ["Museo Histórico Municipal", "Museo de Osorno"],
+      "alias": [
+        "Museo Histórico Municipal",
+        "Museo de Osorno"
+      ],
       "sector": "Centro",
       "categoria": "Museo",
       "acceso": "Público",
@@ -133,13 +167,19 @@
       "descripcion": "Conserva y difunde el patrimonio cultural de Osorno en salas temáticas: prehistoria, cultura mapuche huilliche, fundación y repoblación, el Cuarto Centenario y el terremoto de 1960, entre otras.",
       "direccion": "Manuel Antonio Matta 809",
       "fuente": "Municipalidad de Osorno",
-      "revisar": ["direccion", "anio"],
+      "revisar": [
+        "direccion",
+        "anio"
+      ],
       "verificado": false
     },
     {
       "id": "museo-del-pleistoceno",
       "nombre": "Museo del Pleistoceno",
-      "alias": ["Museo Pleistoceno", "Sala museográfica Pilauco"],
+      "alias": [
+        "Museo Pleistoceno",
+        "Sala museográfica Pilauco"
+      ],
       "sector": "Norte",
       "categoria": "Museo",
       "acceso": "Público",
@@ -153,7 +193,10 @@
     {
       "id": "pinacoteca-municipal",
       "nombre": "Pinacoteca Municipal",
-      "alias": ["Pinacoteca", "Pinacoteca Arturo Montecino"],
+      "alias": [
+        "Pinacoteca",
+        "Pinacoteca Arturo Montecino"
+      ],
       "sector": "Centro",
       "categoria": "Museo",
       "acceso": "Público",
@@ -167,7 +210,10 @@
     {
       "id": "museo-surazo",
       "nombre": "Museo de Artes Visuales Surazo",
-      "alias": ["Surazo", "Museo Surazo"],
+      "alias": [
+        "Surazo",
+        "Museo Surazo"
+      ],
       "sector": "Centro",
       "categoria": "Museo",
       "acceso": "Público",
@@ -176,13 +222,21 @@
       "descripcion": "Única entidad cultural de la ciudad dedicada exclusivamente a las artes visuales. Tiene siete salas para muestras y talleres, con actividades gratuitas.",
       "direccion": "Osorno",
       "fuente": "Municipalidad de Osorno",
-      "revisar": ["sector", "direccion", "anio"],
+      "revisar": [
+        "sector",
+        "direccion",
+        "anio"
+      ],
       "verificado": false
     },
     {
       "id": "ex-estacion-de-ferrocarriles",
       "nombre": "Ex Estación de Ferrocarriles",
-      "alias": ["Estación de trenes", "Antigua estación", "Biblioteca Municipal"],
+      "alias": [
+        "Estación de trenes",
+        "Antigua estación",
+        "Biblioteca Municipal"
+      ],
       "sector": "Centro",
       "categoria": "Edificio patrimonial",
       "acceso": "Público",
@@ -191,13 +245,17 @@
       "descripcion": "Edificio patrimonial construido a principios del siglo XX. Hoy alberga la Biblioteca Municipal, con unos 18.000 libros, y la Pinacoteca Municipal.",
       "direccion": "Portales 901",
       "fuente": "Municipalidad de Osorno",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "teatro-municipal",
       "nombre": "Teatro Municipal",
-      "alias": ["Teatro de Osorno"],
+      "alias": [
+        "Teatro de Osorno"
+      ],
       "sector": "Centro",
       "categoria": "Teatro",
       "acceso": "Mixto",
@@ -206,13 +264,19 @@
       "descripcion": "Principal sala de espectáculos de la ciudad, en pleno centro cívico.",
       "direccion": "Av. Juan Mackenna 851",
       "fuente": "Universidad de Los Lagos",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "municipalidad-de-osorno",
       "nombre": "Municipalidad de Osorno",
-      "alias": ["Edificio consistorial", "Alcaldía", "Municipio"],
+      "alias": [
+        "Edificio consistorial",
+        "Alcaldía",
+        "Municipio"
+      ],
       "sector": "Centro",
       "categoria": "Edificio público",
       "acceso": "Mixto",
@@ -221,13 +285,18 @@
       "descripcion": "Edificio consistorial frente a la Plaza de Armas. Al frente está el monumento a Ambrosio O'Higgins, inaugurado en 1992 en honor al gobernador que refundó Osorno el 13 de enero de 1796.",
       "direccion": "Juan Mackenna 851",
       "fuente": "Consejo de Monumentos Nacionales",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "mercado-municipal",
       "nombre": "Mercado Municipal",
-      "alias": ["Mercado de Osorno", "Las cocinerías"],
+      "alias": [
+        "Mercado de Osorno",
+        "Las cocinerías"
+      ],
       "sector": "Centro",
       "categoria": "Mercado",
       "acceso": "Público",
@@ -236,13 +305,20 @@
       "descripcion": "Cocinerías, artesanía y productos del campo bajo un mismo techo.",
       "direccion": "Errázuriz con Prat",
       "fuente": "Atractivos Turísticos Comuna de Osorno 2024",
-      "revisar": ["anio", "direccion"],
+      "revisar": [
+        "anio",
+        "direccion"
+      ],
       "verificado": false
     },
     {
       "id": "estadio-ruben-marcos",
       "nombre": "Estadio Rubén Marcos Peralta",
-      "alias": ["Estadio Municipal", "Parque Schott", "Estadio de Osorno"],
+      "alias": [
+        "Estadio Municipal",
+        "Parque Schott",
+        "Estadio de Osorno"
+      ],
       "sector": "Centro",
       "categoria": "Estadio",
       "acceso": "Mixto",
@@ -256,7 +332,10 @@
     {
       "id": "parque-cuarto-centenario",
       "nombre": "Parque Cuarto Centenario",
-      "alias": ["Parque IV Centenario", "Cuarto Centenario"],
+      "alias": [
+        "Parque IV Centenario",
+        "Cuarto Centenario"
+      ],
       "sector": "Centro",
       "categoria": "Parque",
       "acceso": "Público",
@@ -265,13 +344,17 @@
       "descripcion": "Creado cuando la ciudad cumplió 400 años, junto al río Damas. Tiene anfiteatro, senderos junto al río y especies autóctonas como araucarias, robles, lengas y olivillos. Sede del festival costumbrista de enero.",
       "direccion": "Junto al río Damas",
       "fuente": "SERNATUR / Atractivos Turísticos Comuna de Osorno 2024",
-      "revisar": ["sector"],
+      "revisar": [
+        "sector"
+      ],
       "verificado": true
     },
     {
       "id": "parque-chuyaca",
       "nombre": "Parque Chuyaca",
-      "alias": ["Chuyaca"],
+      "alias": [
+        "Chuyaca"
+      ],
       "sector": "Norte",
       "categoria": "Parque",
       "acceso": "Público",
@@ -280,13 +363,18 @@
       "descripcion": "A orillas del río Damas, en la entrada principal de Osorno. Tiene la piscina municipal, skate park, multicanchas y el Parque Pleistocénico.",
       "direccion": "Entrada principal de Osorno, orillas del río Damas",
       "fuente": "Explora Osorno / Atractivos Turísticos 2024",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "parque-pleistocenico",
       "nombre": "Parque Pleistocénico",
-      "alias": ["Parque de los animales", "Megafauna"],
+      "alias": [
+        "Parque de los animales",
+        "Megafauna"
+      ],
       "sector": "Norte",
       "categoria": "Parque",
       "acceso": "Público",
@@ -295,13 +383,18 @@
       "descripcion": "Dentro del Parque Chuyaca. Expone réplicas a escala real de la megafauna que habitaba la zona hace más de 12 mil años.",
       "direccion": "Parque Chuyaca",
       "fuente": "Explora Osorno",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "parque-bellavista",
       "nombre": "Parque Bellavista",
-      "alias": ["Bellavista", "Bosque de Bellavista"],
+      "alias": [
+        "Bellavista",
+        "Bosque de Bellavista"
+      ],
       "sector": "Rahue",
       "categoria": "Parque",
       "acceso": "Público",
@@ -315,7 +408,10 @@
     {
       "id": "puente-colgante-bellavista",
       "nombre": "Puente Colgante de Bellavista",
-      "alias": ["Puente colgante", "Pasarela Bellavista"],
+      "alias": [
+        "Puente colgante",
+        "Pasarela Bellavista"
+      ],
       "sector": "Rahue",
       "categoria": "Puente",
       "acceso": "Público",
@@ -324,13 +420,18 @@
       "descripcion": "Paso peatonal sobre el río Rahue que conecta Rahue Bajo con Ovejería, en el Parque Bellavista.",
       "direccion": "Parque Bellavista, sobre el río Rahue",
       "fuente": "Explora Osorno",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "puente-san-pedro",
       "nombre": "Puente San Pedro",
-      "alias": ["Puente viejo", "Puente Rahue"],
+      "alias": [
+        "Puente viejo",
+        "Puente Rahue"
+      ],
       "sector": "Rahue",
       "categoria": "Puente",
       "acceso": "Público",
@@ -339,13 +440,17 @@
       "descripcion": "Conecta el centro de Osorno con Rahue Bajo. El puente 'viejo' es el segundo de tres que han llevado este nombre y hoy funciona como paseo peatonal y mirador.",
       "direccion": "Sobre el río Rahue",
       "fuente": "Explora Osorno / MOP Los Lagos",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "puente-chuyaca",
       "nombre": "Puente Chuyaca",
-      "alias": ["Chuyaca puente"],
+      "alias": [
+        "Chuyaca puente"
+      ],
       "sector": "Norte",
       "categoria": "Puente",
       "acceso": "Público",
@@ -354,13 +459,17 @@
       "descripcion": "Cruza el río Damas y conecta la entrada principal de Osorno con el resto de la ciudad.",
       "direccion": "Sobre el río Damas",
       "fuente": "Explora Osorno",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": true
     },
     {
       "id": "plazuela-yungay",
       "nombre": "Plazuela Yungay",
-      "alias": ["Plaza Yungay"],
+      "alias": [
+        "Plaza Yungay"
+      ],
       "sector": "Centro",
       "categoria": "Plaza",
       "acceso": "Público",
@@ -369,13 +478,19 @@
       "descripcion": "Plaza del casco céntrico de Osorno.",
       "direccion": "Centro",
       "fuente": "Wikipedia Osorno (Chile)",
-      "revisar": ["anio", "direccion"],
+      "revisar": [
+        "anio",
+        "direccion"
+      ],
       "verificado": false
     },
     {
       "id": "terminal-de-buses",
       "nombre": "Terminal de Buses",
-      "alias": ["Rodoviario", "Terminal de Osorno"],
+      "alias": [
+        "Rodoviario",
+        "Terminal de Osorno"
+      ],
       "sector": "Centro",
       "categoria": "Terminal",
       "acceso": "Público",
@@ -384,13 +499,19 @@
       "descripcion": "Puerta de entrada y salida de la ciudad hacia el resto del país.",
       "direccion": "Errázuriz 1400",
       "fuente": "pendiente",
-      "revisar": ["anio", "direccion"],
+      "revisar": [
+        "anio",
+        "direccion"
+      ],
       "verificado": false
     },
     {
       "id": "hospital-base-san-jose",
       "nombre": "Hospital Base San José",
-      "alias": ["Hospital de Osorno", "Hospital Base"],
+      "alias": [
+        "Hospital de Osorno",
+        "Hospital Base"
+      ],
       "sector": "Oriente",
       "categoria": "Hospital",
       "acceso": "Mixto",
@@ -399,13 +520,20 @@
       "descripcion": "Principal centro asistencial público de la provincia.",
       "direccion": "Av. Doctor Guillermo Bühler 1765",
       "fuente": "pendiente",
-      "revisar": ["sector", "anio", "direccion"],
+      "revisar": [
+        "sector",
+        "anio",
+        "direccion"
+      ],
       "verificado": false
     },
     {
       "id": "aerodromo-canal-bajo",
       "nombre": "Aeródromo Cañal Bajo",
-      "alias": ["Aeropuerto de Osorno", "Carlos Hott Siebert"],
+      "alias": [
+        "Aeropuerto de Osorno",
+        "Carlos Hott Siebert"
+      ],
       "sector": "Oriente",
       "categoria": "Aeropuerto",
       "acceso": "Mixto",
@@ -414,13 +542,19 @@
       "descripcion": "Terminal aéreo Carlos Hott Siebert, al oriente de la ciudad.",
       "direccion": "Camino Cañal Bajo",
       "fuente": "pendiente",
-      "revisar": ["sector", "anio"],
+      "revisar": [
+        "sector",
+        "anio"
+      ],
       "verificado": false
     },
     {
       "id": "calle-ramirez",
       "nombre": "Calle Ramírez",
-      "alias": ["Ramírez", "Paseo Ramírez"],
+      "alias": [
+        "Ramírez",
+        "Paseo Ramírez"
+      ],
       "sector": "Centro",
       "categoria": "Calle",
       "acceso": "Público",
@@ -429,13 +563,19 @@
       "descripcion": "Eje comercial y peatonal del centro de Osorno.",
       "direccion": "Centro",
       "fuente": "pendiente",
-      "revisar": ["anio"],
+      "revisar": [
+        "anio"
+      ],
       "verificado": false
     },
     {
       "id": "calle-juan-mackenna",
       "nombre": "Calle Juan Mackenna",
-      "alias": ["Mackenna", "Avenida Mackenna", "Barrio de Rotemburgo"],
+      "alias": [
+        "Mackenna",
+        "Avenida Mackenna",
+        "Barrio de Rotemburgo"
+      ],
       "sector": "Centro",
       "categoria": "Calle",
       "acceso": "Público",

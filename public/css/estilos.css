@@ -657,6 +657,72 @@ button {
   background: var(--incorrecto);
 }
 
+/* ---------- Modo por frases ---------- */
+
+.panel-frases {
+  max-width: 620px;
+  margin: 0 auto 18px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: linear-gradient(160deg, var(--panel), var(--fondo-2));
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.frases-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--borde);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.frases-contador {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texto-3);
+}
+
+.frases {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 16px 20px 18px 42px;
+}
+
+.frase {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 4px;
+}
+
+.frase::marker {
+  color: var(--acento);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .frase.nueva {
+    animation: aparecer 0.45s ease both;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Modo imagen ---------- */
 
 .foto-marco {
@@ -902,64 +968,6 @@ button {
   margin-bottom: 6px;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.stat {
-  text-align: center;
-  padding: 10px 6px;
-  border-radius: var(--radio-sm);
-  background: var(--panel-2);
-  border: 1px solid var(--borde);
-}
-
-.stat b {
-  display: block;
-  font-size: 22px;
-  color: var(--texto);
-}
-
-.stat span {
-  font-size: 11px;
-  color: var(--texto-3);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.dist {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 6px;
-}
-
-.dist-fila {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 8px;
-  align-items: center;
-  font-size: 13px;
-}
-
-.dist-barra {
-  background: var(--acento-2);
-  border-radius: 4px;
-  padding: 2px 8px;
-  color: #06231c;
-  font-weight: 700;
-  text-align: right;
-  min-width: 28px;
-}
-
-.dist-barra.vacia {
-  background: var(--panel-2);
-  color: var(--texto-3);
-}
-
 /* ---------- Avisos ---------- */
 
 .aviso {
@@ -1050,8 +1058,13 @@ button {
     padding: 5px 3px;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .frases {
+    padding: 14px 16px 16px 36px;
+    gap: 11px;
+  }
+
+  .frase {
+    font-size: 15px;
   }
 
   .logo-sub {

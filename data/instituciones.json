@@ -11,7 +11,7 @@
     "genero": "Mixto | Femenino | Masculino",
     "color": "nombre del color institucional principal",
     "colorHex": "hex para el círculo de color en la grilla",
-    "fundacion": "año de fundación (number) o null"
+    "fundacion": "Ya NO es un atributo del juego (se sacó junto con el año de las zonas). Se conserva como dato informativo."
   },
   "items": [
     {

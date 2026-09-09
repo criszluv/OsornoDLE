@@ -65,7 +65,20 @@ function fichaRevelada(modo, item) {
     ficha.rubro = item.rubro || null;
     ficha.sector = item.sector || null;
   }
+  if (modo.tipo === 'frases') {
+    ficha.tipo = item.tipo || null;
+    ficha.sector = item.sector || null;
+  }
   return ficha;
+}
+
+/**
+ * Frases reveladas segun los intentos fallidos: siempre al menos una, y
+ * una mas por cada fallo, sin pasarse del total.
+ */
+function frasesVisibles(item, fallidos) {
+  const todas = Array.isArray(item.frases) ? item.frases : [];
+  return todas.slice(0, Math.min(fallidos + 1, todas.length));
 }
 
 function pistasVisibles(modo, item, fallidos) {
@@ -141,6 +154,15 @@ function getDaily(res, modo, params) {
     cabecera.imagenToken = crearToken(modo.id, dia, nivel);
     cabecera.pistas = pistasVisibles(modo, item, fallidos);
   }
+
+  if (modo.tipo === 'frases') {
+    const fallidos = Math.max(0, Number(params?.get('fallidos')) || 0);
+    const { item } = respuestaDelDia(modo, dia);
+    cabecera.frases = frasesVisibles(item, fallidos);
+    cabecera.frasesTotales = (item.frases || []).length;
+    cabecera.pistas = pistasVisibles(modo, item, fallidos);
+  }
+
   json(res, 200, cabecera);
 }
 
@@ -176,6 +198,11 @@ async function postGuess(req, res, modo) {
     salida.nivelesTotales = modo.nivelesImagen.length;
     salida.imagenToken = crearToken(modo.id, dia, nivel);
     salida.pistas = pistasVisibles(modo, respuesta, fallidos);
+  } else if (modo.tipo === 'frases') {
+    // Al acertar se muestran todas: ya no hay nada que proteger.
+    salida.frases = correcto ? respuesta.frases || [] : frasesVisibles(respuesta, fallidos);
+    salida.frasesTotales = (respuesta.frases || []).length;
+    salida.pistas = pistasVisibles(modo, respuesta, fallidos);
   } else {
     salida.fila = compararItem(modo, intento, respuesta);
   }
@@ -191,6 +218,10 @@ function postRendirse(res, modo) {
   if (modo.tipo === 'imagen') {
     salida.nivel = modo.nivelesImagen.length - 1;
     salida.imagenToken = crearToken(modo.id, dia, salida.nivel);
+  }
+  if (modo.tipo === 'frases') {
+    salida.frases = item.frases || [];
+    salida.frasesTotales = (item.frases || []).length;
   }
   json(res, 200, salida);
 }

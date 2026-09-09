@@ -1,16 +1,22 @@
 # Osornodle
 
-Tres desafíos diarios sobre Osorno, al estilo loldle.net. Sin cuentas, sin login: un
-desafío nuevo de cada modo a la medianoche de Chile, con racha y estadísticas guardadas
-en el navegador de cada jugador.
+Cuatro desafíos diarios sobre Osorno, al estilo loldle.net. Sin cuentas ni login: un
+desafío nuevo de cada modo a la medianoche de Chile, guardado en el navegador de cada
+jugador.
 
 - **🗺️ Zonas** — adivina el lugar del día (plazas, parques, puentes, edificios) comparando
-  macro-sector, categoría, acceso, si es techado y el año.
+  macro-sector, categoría, acceso y si es techado.
 - **🎓 Instituciones** — misma mecánica, sobre colegios, liceos e instituciones de
-  educación superior: sector, nivel educativo, dependencia, género, color institucional y
-  año de fundación.
+  educación superior: sector, nivel educativo, dependencia, género y color institucional.
 - **📸 Locales** — reconocimiento visual: una foto pixelada al extremo que se va aclarando
   con cada intento fallido, más pistas de texto que se desbloquean por el camino.
+- **🧩 Descripción** — zonas e instituciones mezcladas, adivinadas por frases que describen
+  cómo es el lugar: sus materiales, su forma, lo que tiene adentro. Empiezas con una frase
+  vaga y cada intento fallido suma otra más específica.
+
+No hay pantalla de estadísticas: cada modo tiene un botón **Jugar de nuevo** que repite el
+desafío del día desde cero, y en el pie está **Borrar mis partidas** para dejarlo todo
+limpio.
 
 ## Poner en marcha
 
@@ -51,20 +57,22 @@ data/                  Contenido del juego (lo que vas a editar seguido)
   zonas.json
   instituciones.json
   locales.json
+  descripciones.json
 public/                Frontend (HTML + CSS + JS, sin build ni framework)
   index.html
   css/estilos.css
   js/                  app, juego, autocompletar, api, almacenamiento, ui
   img/locales/         Fotos del modo visual
+  img/zonas/           Fotos de los lugares (se muestran al resolver)
 server/
   index.js             Servidor HTTP y archivos estáticos
-  lib/modes.js         ⭐ Configuración de los 3 modos y sus atributos
+  lib/modes.js         ⭐ Configuración de los 4 modos y sus atributos
   lib/daily.js         Sorteo determinista del desafío del día
-  lib/compare.js       Lógica de colores y flechas
+  lib/compare.js       Lógica de colores de la grilla
   lib/imagen.js        Pixelado progresivo
   lib/token.js         Firma de las URLs de imagen
   routes/api.js        Endpoints
-scripts/               validate-data, hoy, placeholders
+scripts/               validate-data, hoy, lista-fotos, placeholders
 ```
 
 ## Cómo se elige el desafío del día
@@ -73,8 +81,8 @@ No hay cron ni base de datos. El día se calcula en zona horaria `America/Santia
 él se genera una permutación barajada de todos los items (semilla derivada del modo y del
 número de ciclo). Consecuencias:
 
-- Ningún item se repite hasta que **salieron todos**. Con 24 zonas, cada lugar vuelve a
-  aparecer 24 días después.
+- Ningún item se repite dentro de un ciclo: con 30 zonas, cada lugar sale una vez cada 30
+  días. En el borde entre dos ciclos se fuerza además una separación mínima de 4 días.
 - El resultado es reproducible: `npm run hoy 30` te muestra el mes completo por adelantado.
 - Agregar items cambia la rotación futura (no el historial de hoy hacia atrás dentro del
   ciclo en curso).
@@ -98,8 +106,9 @@ Todo vive en `data/*.json`. El formato es un objeto con `items` (los campos `_no
   "categoria": "Puente",
   "acceso": "Público",
   "techado": false,
-  "anio": 1940,
   "descripcion": "Se muestra al resolver el desafío.",
+  "imagen": "img/zonas/puente-san-pedro.jpg",
+  "credito": "Foto propia",
   "direccion": "Sobre el río Rahue",
   "verificado": true
 }
@@ -109,11 +118,12 @@ Todo vive en `data/*.json`. El formato es un objeto con `items` (los campos `_no
   es lo que se guarda en las partidas de la gente.
 - `alias` solo afecta al buscador; no se muestra nunca.
 - `activo: false` saca un item de la rotación sin borrarlo.
-- `anio` puede ser `null` si no lo sabes: se muestra `¿?` y siempre cuenta como fallo.
+- `imagen` y `credito` son opcionales: si están, la foto y su atribución se muestran al
+  resolver el desafío.
 
 ### Una institución
 
-Igual, con `niveles` (array), `dependencia`, `genero`, `color` + `colorHex` y `fundacion`.
+Igual, con `niveles` (array), `dependencia`, `genero` y `color` + `colorHex`.
 
 ### Un local
 
@@ -137,6 +147,30 @@ pistas a los 2, 3 y 5 intentos fallidos.
 nombre del local se lea en la imagen (o el juego se acaba en el primer nivel). Consigue
 permiso del comercio antes de publicar su fachada o sus productos.
 
+### Una descripción
+
+```json
+{
+  "id": "casa-mohr-perez",
+  "nombre": "Casa Mohr Pérez",
+  "tipo": "Zona",
+  "sector": "Centro",
+  "frases": [
+    "Es una construcción de dos plantas, con corredor y un soberado bajo el techo.",
+    "Sus muros exteriores están cubiertos de tejuelas.",
+    "La mandó construir en 1876 un descendiente de colonos alemanes."
+  ]
+}
+```
+
+Las `frases` se revelan de a una: la primera al empezar y una más por cada intento
+fallido. Escríbelas de la más vaga a la más delatora, en presente y **sin nombrar el
+lugar** — `npm run validate` marca como error cualquier frase que contenga el nombre.
+Mínimo 2 frases por item; 4 o 5 funcionan mejor.
+
+Este modo mezcla zonas e instituciones en una sola bolsa, así que el jugador tampoco sabe
+de entrada cuál de las dos es. El campo `tipo` se revela como pista al tercer intento.
+
 Después de cualquier cambio:
 
 ```bash
@@ -148,8 +182,13 @@ npm run validate
 `server/lib/modes.js` es la única fuente de verdad: el servidor compara con ella y el
 frontend dibuja las columnas a partir de ella. Para agregar una columna, súmala al array
 `atributos` del modo y agrega el campo en el JSON. Tipos disponibles: `exact`, `multi`
-(array, permite amarillo parcial), `boolean`, `numeric` (flechas ⬆️⬇️ y amarillo si está
-dentro de `cerca`) y `color` (círculo de color).
+(array, permite amarillo parcial), `boolean`, `color` (círculo de color) y `numeric`
+(flechas ⬆️⬇️ y amarillo si está dentro de `cerca`).
+
+`numeric` está implementado pero ningún modo lo usa: los años se sacaron del juego porque
+la mayoría de los lugares no tenía uno verificable y la columna `¿?` confundía más de lo
+que ayudaba. Los años siguen en los JSON y aparecen en las descripciones; si algún día
+quedan completos, basta con volver a agregar el atributo.
 
 Los atributos con `valores: [...]` tienen vocabulario cerrado: `npm run validate` marca
 como error cualquier valor fuera de la lista, así no se cuelan typos que rompen el juego.
@@ -165,9 +204,8 @@ Osorno* (2024) y de Explora Osorno; cada item lleva su campo `fuente`. 21 de 30 
 marcados `verificado: true`. Los que traen un array `revisar` necesitan que alguien con
 conocimiento local confirme esos campos puntuales.
 
-Dos cosas conocidas de este set: 12 de 30 lugares tienen `anio` (el resto muestra `¿?` y
-siempre cuenta como fallo), y 20 de 30 son del sector Centro, así que la columna de sector
-discrimina poco. Ambas se arreglan completando datos o subdividiendo los sectores.
+Una debilidad conocida de este set: 20 de 30 lugares son del sector Centro, así que esa
+columna discrimina poco. Se arregla subdividiendo el Centro en sectores más finos.
 
 **🎓 Instituciones — pendiente.** Solo la Universidad de Los Lagos y el Instituto Alemán
 están verificados. Para el resto, la fuente autoritativa de `dependencia`, `niveles` y
